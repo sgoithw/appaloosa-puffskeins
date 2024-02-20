@@ -4,7 +4,7 @@
 --color-primary-10: rgba(36, 36, 36, 0.10); /*#242424*/
 --color-primary-40: rgba(36, 36, 36, 0.40); /*#242424*/
 --color-primary-60: rgba(36, 36, 36, 0.60); /*#242424*/
---color-primary-60: rgba(36, 36, 36, 0.8) /*#242424*/
+--color-primary-80: rgba(36, 36, 36, 0.80); /*#242424*/
 
 --color-secondary-100: rgba(244, 244, 244, 1);/* #f4f4f4*/
 --color-secondary-10: rgba(244, 244, 244, 0.10); /*#f4f4f4*/
@@ -31,5 +31,9 @@
   --mobile: 375px;
   --tablet: 768px;
   --desktop: 1440px;
+
+      /* TRANSITION */
+  --transition-time: 250ms;
+  --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   }
