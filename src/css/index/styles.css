@@ -6,5 +6,7 @@
 @import url('./index/pop-up-window.css');
 
 @import url('./basic/common.css');
+@import url('./basic/color.css');
+@import url('./basic/fonts.css');
 @import url('./basic/reset.css');
 @import url('./basic/styles.css');
