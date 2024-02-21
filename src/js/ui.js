@@ -1,4 +1,28 @@
-<div class="overlay exercises-popup" id='exercises-popup'>
+/**
+ * ...
+ */
+class PopupUI {
+
+  /**
+   * Returns exercise details
+   * html string
+   *
+   * @param exercise
+   */
+  getExerciseDetailsHTML({
+                           _id,
+                           bodyPart,
+                           equipment,
+                           gifUrl,
+                           name,
+                           target,
+                           description,
+                           rating,
+                           burnedCalories,
+                           time,
+                           popularity,
+                         }) {
+    return `
   <div class="modal-exercises">
         <div class="modal-exersises-container">
             <button class="modal-exercises-btn-close">
@@ -149,15 +173,9 @@
                </button>
         </div>
     </div>
-</div>
+`;
+  }
 
+}
 
-
-
-
-
-
-
-
-
-
+export const popupUI = new PopupUI();
