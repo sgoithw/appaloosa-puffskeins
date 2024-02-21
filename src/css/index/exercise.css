@@ -9,13 +9,15 @@
   
   /* FONTS */
   --font-family: "DM Sans", sans-serif;
-  --font-size-subtitle: 20px;
+  --font-size-subtitle-normal: 24px;
+  --font-size-subtitle-small: 20px;
+  --font-size-normal: 16px;
   --font-size-small: 14px;
   --font-size-tiny: 12px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
-  --line-height-subtitle: 1.0;
-  --line-height-normal: 1.29;
+  --line-height-subtitle: 1;
+  --line-height-normal: 16px;
   --line-height-details: 1.5;
   --letter-spacing-normal: -0.28px;
   --letter-spacing-zero: 0;
@@ -39,25 +41,7 @@ body {
   background-color: var(--color-primary-grey);
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 335px;
-}
-
-/* Tablet */
-@media screen and (min-width: 768px) and (max-width: 1439.98px) {
-  .container {
-    max-width: 704px;
-  }
-}
-
-/* Desktop */
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1376px;
-  }
-}
+/* * All code above are dependencies on other reset / common / root parameters */
 
 .exercises-list {
   width: 100%;
@@ -66,7 +50,7 @@ body {
   row-gap: 20px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+@media only screen and (min-width: 768px) {
   .exercises-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -75,16 +59,13 @@ body {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   .exercises-list {
     width: 900px;
-    flex-direction: row;
-    column-gap: 16px;
-    row-gap: 32px;
   }
 }
 
-/* * All the code above are dependencies on other reset / common / root parameters */
+/* * All code above is for exercise cards containing container (list) and will be menaged separately */
 
 .text-clipped {
   overflow: hidden;
@@ -94,8 +75,9 @@ body {
 
 .exercise {
   position: relative;
-  /* flex-basis: 100%; */
 
+  width: 100%;
+  height: 141px;
   padding: 16px;
 
   font-size: var(--font-size-tiny);
@@ -104,10 +86,9 @@ body {
   background-color: var(--color-primary-white);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+@media only screen and (min-width: 768px) {
   .exercise {
-    width: 344px;
-  
+    width: calc((100% - 16px) / 2);
     padding: 16px;
   
     font-size: var(--font-size-tiny);
@@ -127,15 +108,26 @@ body {
 
   display: flex;
   justify-content: flex-end;
-  justify-content: center;
+  align-items: center;
   column-gap: 8px;
   padding: 0;
 
   font-size: var(--font-size-small);
-  letter-spacing: var(--letter-spacing-zero);
+  line-height: 18px;
+  letter-spacing: 0;
 
   border: none;
   background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercise .main-action-btn {
+    width: 61px;
+    height: 24px;
+  
+    font-size: var(--font-size-normal);
+    line-height: 24px;
+  }
 }
 
 .exercise .main-action-arrow-icon {
@@ -150,23 +142,35 @@ body {
 
 }
 
-.exercise .badge {
-  box-sizing: content-box;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+.top {
+  width: fit-content;
+}
 
+.exercise .badge {
+  width: 76px;
+  height: 26px;
+  
+  display: inline-flex;
   padding: 5px 8px;
 
   font-weight: var(--font-weight-medium);
-  line-height: 1;
+  line-height: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
 
   border-radius: 15px;
   border: var(--border-solid-outline);
 }
 
-.exercise .rating-value {
+.exercise .rating {
   margin-left: 16px;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+.exercise .rating-value {
+  line-height: var(--line-height-details);
 }
 
 .exercise .rating-icon {
@@ -194,52 +198,120 @@ body {
 }
 
 .exercise .title {
+  width: fit-content;
   position: relative;
-  margin-top: 25px;
-  display: flex;
+  margin-top: 27px;
+  display: inline-flex;
   align-items: center;
   column-gap: 16px;
 }
 
+@media only screen and (min-width: 768px) {
+  .exercise .title {
+    margin-top: 25px;
+  }
+}
+
 .exercise .title-icon {
   position: absolute;
+  top: -2px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: var(--color-primary-black);
+}
+
+@media only screen and (min-width: 768px) {
+  .exercise .title-icon {
+    top: 4px;
+  }
 }
 
 .exercise .title-text {
   margin-left: 40px;
   max-width: 250px;
 
-  font-size: var(--font-size-subtitle);
-  line-height: var(--line-height-subtitle);
-  letter-spacing: var(--letter-spacing-zero);
+  font-size: var(--font-size-subtitle-small);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercise .title-text {
+    font-size: var(--font-size-subtitle-normal);
+    line-height: 32px;
+  }
 }
 
 .exercise .details {
-  margin-top: 16px;
+  margin-top: 18px;
   width: 100%;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   column-gap: 10px;
 
   line-height: var(--line-height-details);
   letter-spacing: var(--letter-spacing-zero);
 }
 
+@media only screen and (min-width: 768px) {
+  .exercise .details {
+    margin-top: 8px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .exercise .details {
+    column-gap: 16px;
+  }
+}
+
 .exercise .detail:nth-child(1) {
   max-width: 131px;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercise .detail:nth-child(1) {
+    max-width: 133px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .exercise .detail:nth-child(1) {
+    max-width: unset;
+  }
 }
 
 .exercise .detail:nth-child(2) {
   max-width: 91px;
 }
 
+@media only screen and (min-width: 768px) {
+  .exercise .detail:nth-child(2) {
+    max-width: 93px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .exercise .detail:nth-child(2) {
+    max-width: unset;
+  }
+}
+
 .exercise .detail:nth-child(3) {
   max-width: 61px;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercise .detail:nth-child(3) {
+    max-width: 66px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .exercise .detail:nth-child(3) {
+    max-width: unset;
+  }
 }
 
 .exercise .detail {
@@ -250,20 +322,4 @@ body {
 .exercise .detail-title {
   flex-shrink: 0;
   color: var(--color-primary-transparent);
-}
-
-.exercise .detail-value {
-
-}
-
-.exercise .detail-burned-calories {
-  /* max-width: 40px; */
-}
-
-.exercise .detail-body-part{
-  /* width: 32px; */
-}
-
-.exercise .detail-target {
-  /* max-width: 22px; */
 }
