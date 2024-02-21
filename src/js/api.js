@@ -5,15 +5,15 @@ class YourEnergyAPI {
   #baseUrl = '';
 
   /**
+   * Constructor to initialize the base URL
    * @param {string} baseUrl  - The base url for the API.
    */
-
-  // Constructor to initialize the base URL
   constructor(baseUrl) {
     this.#baseUrl = baseUrl;
   }
 
   /**
+   * Method to fetch filters from the API
    * All filters. This endpoint returns all the filters available for the exercise search.
    * @param {Object} query - The parameters for the exercise search.
    * @param {string} query.filter - The filter to apply to the search.
@@ -21,7 +21,6 @@ class YourEnergyAPI {
    * @param {number} query.limit - The number of exercises to return.
    * @returns
    */
-  // Method to fetch filters from the API
   filters(query) {
     // Convert query parameters to URL search params
     const parameters = new URLSearchParams(query);
@@ -37,6 +36,7 @@ class YourEnergyAPI {
   }
 
   /**
+   * Method to fetch exercises from the API
    * All exercises. This endpoint returns all the exercises available for the provided.
    * @param {Object} query - The parameters for the exercise search.
    * @param {string} query.bodypart - The filter that is applied to the search.
@@ -47,7 +47,6 @@ class YourEnergyAPI {
    * @param {number} query.limit - The number of exercises to return.
    * @returns
    */
-  // Method to fetch exercises from the API
   exercises(query) {
     const parameters = new URLSearchParams(query);
     return fetch(`${this.#baseUrl}/api/exercises?${parameters}`).then(
@@ -60,7 +59,10 @@ class YourEnergyAPI {
     );
   }
 
-  // Method to fetch quotes from the API. No paramentrs are required
+  /**
+   * Method to fetch quotes from the API. No paramentrs are required
+   * @returns {Promise<Response>}
+   */
   quotes() {
     return fetch(`${this.#baseUrl}/api/quote`).then(response => {
       if (response.ok) {
@@ -70,8 +72,10 @@ class YourEnergyAPI {
     });
   }
 
-  // Method to fetch a specific exercise by its ID.
-  //* @param {string} id - Exercise ID.
+  /**
+   * Returns exercise data
+   * @param {string} id - Exercise ID.
+   */
   getExerciseById(id) {
     return fetch(`${this.#baseUrl}/api/exercises/${id}`).then(response => {
       if (response.ok) {
@@ -81,14 +85,18 @@ class YourEnergyAPI {
     });
   }
 
-  // Method to patch (update) the rating of an exercise
-  patchRating(id, data) {
+  /**
+   * Method to patch (update) the rating of an exercise
+   * @param id - exersice id
+   * @returns {Promise<Response>}
+   */
+  patchRating(id) {
     return fetch(`${this.#baseUrl}/api/exercises/${id}/rating`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(),
     }).then(response => {
       if (response.ok) {
         return response.json();
@@ -97,14 +105,17 @@ class YourEnergyAPI {
     });
   }
 
-  // Method to create a subscription
-  createSubscription(data) {
+  /**
+   * Method to create a subscription
+   * @returns {Promise<Response>}
+   */
+  createSubscription() {
     return fetch(`${this.#baseUrl}/api/subscription`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(),
     }).then(response => {
       if (response.ok) {
         return response.json();
