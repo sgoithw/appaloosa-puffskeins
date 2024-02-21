@@ -48,4 +48,4 @@ class FavouritesManager {
 }
 
 // exporting class FavouritesManager.
-export default FavouritesManager;
+export const favouritesManager = new FavouritesManager();
