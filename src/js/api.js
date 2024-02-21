@@ -87,16 +87,17 @@ class YourEnergyAPI {
 
   /**
    * Method to patch (update) the rating of an exercise
-   * @param id - exersice id
+   * @param id - qery parameter -exersice ID
+   * @param data - object containing rate, email and rewiev
    * @returns {Promise<Response>}
    */
-  patchRating(id) {
+  patchRating(id, data) {
     return fetch(`${this.#baseUrl}/api/exercises/${id}/rating`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(),
+      body: JSON.stringify(data),
     }).then(response => {
       if (response.ok) {
         return response.json();
@@ -107,15 +108,16 @@ class YourEnergyAPI {
 
   /**
    * Method to create a subscription
+   * @param data - object that contains email
    * @returns {Promise<Response>}
    */
-  createSubscription() {
+  createSubscription(data) {
     return fetch(`${this.#baseUrl}/api/subscription`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(),
+      body: JSON.stringify(data),
     }).then(response => {
       if (response.ok) {
         return response.json();
