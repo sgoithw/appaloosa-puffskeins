@@ -244,6 +244,9 @@ body {
 @media only screen and (min-width: 768px) {
   .exercise .title-text {
     width: calc(100% - 40px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
     font-size: var(--font-size-subtitle-normal);
     line-height: 32px;
   }
