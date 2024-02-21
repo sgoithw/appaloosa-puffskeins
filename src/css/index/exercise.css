@@ -43,7 +43,7 @@ body {
 
 /* * All code above are dependencies on other reset / common / root parameters */
 
-.exercises-list {
+.exs-title-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  .exercises-list {
+  .exs-title-container {
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 16px;
@@ -60,7 +60,7 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
-  .exercises-list {
+  .exs-title-container {
     width: 900px;
   }
 }
@@ -198,9 +198,9 @@ body {
 }
 
 .exercise .title {
+  margin-top: 25px;
   width: fit-content;
   position: relative;
-  margin-top: 27px;
   display: inline-flex;
   align-items: center;
   column-gap: 16px;
@@ -233,6 +233,8 @@ body {
 .exercise .title-text {
   margin-left: 40px;
   max-width: 250px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 
   font-size: var(--font-size-subtitle-small);
   line-height: 1;
@@ -241,13 +243,21 @@ body {
 
 @media only screen and (min-width: 768px) {
   .exercise .title-text {
+    width: calc(100% - 40px);
     font-size: var(--font-size-subtitle-normal);
     line-height: 32px;
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .exercise .title-text {
+    max-width: unset;
+    width: unset;
+  }
+}
+
 .exercise .details {
-  margin-top: 18px;
+  margin-top: 16px;
   width: 100%;
 
   display: flex;
