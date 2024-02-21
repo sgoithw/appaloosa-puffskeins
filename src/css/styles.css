@@ -1,7 +1,8 @@
+@import url('node_modules/modern-normalize/modern-normalize.css');
+
 @import url('./basic/reset.css');
 @import url('./basic/common.css');
 @import url('./basic/colors.css');
-@import url('./basic/styles.css');
 
 @import url('./index/header.css');
 @import url('./index/hero.css');
