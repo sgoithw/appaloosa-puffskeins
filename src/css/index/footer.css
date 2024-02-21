@@ -1,0 +1,233 @@
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
+.footer {
+  background-color: var(--color-primary-100);
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.footer-logo {
+  fill: var(--color-secondary-100);
+}
+
+.footer-logo-img {
+  margin-bottom: 20px;
+}
+
+.social-list {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-list-item {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-secondary-60);
+  transition: var(--transition-time) var(--transition-function),
+    fill var(--transition-time) var(--transition-function);
+  color: var(--color-secondary-100);
+}
+
+.social-list-item:hover,
+.social-list-item:focus {
+  background-color: var(--color-secondary-100);
+  color: var(--color-primary-100);
+}
+.social-list-link {
+  display: flex;
+  fill: var(--color-secondary-100);
+  transition: fill var(--transition-time) var(--transition-function);
+}
+
+.social-list-icon {
+  fill: currentColor;
+}
+
+.footer-headline {
+  color: var(--color-secondary-100);
+  font-family: DM Sans;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.76px;
+
+  margin-bottom: 20px;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.subscribe-description {
+  margin-bottom: 20px;
+  color: var(--color-secondary-100);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28rem;
+}
+
+.subscribe-form {
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.subscribe-input {
+  font-size: 16px;
+  line-height: 1.5rem;
+  background-color: var(--color-primary-100);
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--color-secondary-10);
+}
+
+.subscribe-input:focus {
+  background-color: var(--color-secondary-100);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-medium);
+  border-color: var(--color-secondary-100);
+  background-color: var(--color-secondary-100);
+  transition: 250ms ease-in-out;
+}
+
+.tnc-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.footer-tnc:hover,
+.footer-tnc:focus {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.tnc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.privacy-text {
+  display: inline-block;
+  color: var(--color-secondary-60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28rem;
+  letter-spacing: -0.28px;
+  opacity: 0.9;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-page {
+    padding: 64px 32px 16px 32px;
+  }
+
+  .nav-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .nav-footer-container {
+    display: flex;
+    flex-direction: row;
+    gap: 114px;
+  }
+  .social-list {
+    margin-bottom: unset;
+  }
+
+  .social-list-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-headline {
+    font-size: 56px;
+    letter-spacing: -1.12px;
+    line-height: 60px;
+    margin-bottom: 32px;
+  }
+
+  .form-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 270px;
+  }
+  .subscribe-input {
+    width: 352px;
+    font-size: 16px;
+    line-height: 1.5rem;
+  }
+
+  .submit-btn {
+    width: 352px;
+  }
+  .subscribe-description {
+    margin-bottom: unset;
+    font-size: 18px;
+    line-height: 1.33rem;
+  }
+  .tnc-container {
+    flex-direction: row;
+  }
+
+  .tnc-list {
+    flex-direction: row;
+    gap: 78px;
+  }
+
+  .privacy-text {
+    font-size: 14px;
+    line-height: 1.28rem;
+    letter-spacing: -0.02rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+
+  .subscribe-form {
+    margin: unset;
+  }
+
+  .footer-headline {
+    margin-bottom: unset;
+    width: 595px;
+  }
+
+  .form-wrapper {
+    margin: unset;
+  }
+
+  .tnc-container {
+    width: 100%;
+  }
+
+  .text-date {
+    padding-right: 308px;
+  }
+}
