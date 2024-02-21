@@ -1,16 +1,16 @@
 :root {
   /* COLORS */
   --color-primary-100: rgba(36, 36, 36, 1); /* #242424*/
-  --color-primary-10: rgba(36, 36, 36, 0.10); /*#242424*/
-  --color-primary-40: rgba(36, 36, 36, 0.40); /*#242424*/
-  --color-primary-60: rgba(36, 36, 36, 0.60); /*#242424*/
-  --color-primary-60: rgba(36, 36, 36, 0.8); /*#242424*/
+  --color-primary-10: rgba(36, 36, 36, 0.1); /*#242424*/
+  --color-primary-40: rgba(36, 36, 36, 0.4); /*#242424*/
+  --color-primary-60: rgba(36, 36, 36, 0.6); /*#242424*/
+  --color-primary-80: rgba(36, 36, 36, 0.8); /*#242424*/
 
   --color-secondary-100: rgba(244, 244, 244, 1); /* #f4f4f4*/
-  --color-secondary-10: rgba(244, 244, 244, 0.10); /*#f4f4f4*/
-  --color-secondary-20: rgba(244, 244, 244, 0.20); /*#f4f4f4*/
-  --color-secondary-40: rgba(244, 244, 244, 0.40); /*#f4f4f4*/
-  --color-secondary-60: rgba(244, 244, 244, 0.60); /*#f4f4f4*/
+  --color-secondary-10: rgba(244, 244, 244, 0.1); /*#f4f4f4*/
+  --color-secondary-20: rgba(244, 244, 244, 0.2); /*#f4f4f4*/
+  --color-secondary-40: rgba(244, 244, 244, 0.4); /*#f4f4f4*/
+  --color-secondary-60: rgba(244, 244, 244, 0.6); /*#f4f4f4*/
 
   --color-yellow: rgba(238, 161, 12, 1); /* #eea10c*/
   --color-grey-notselected: rgba(212, 212, 212, 1); /*#d4d4d4*/
@@ -21,7 +21,6 @@
   --color-shadow-image: rgba(17, 17, 17, 0.5); /*111111 50%*/
   --color-frame-selected-exercises: rgba(239, 237, 232, 0.2); /*EFEDE8 20%*/
 
-
   /* BORDER RADIUS */
   --radius-circle: 50%;
   --radius-medium: 30px;
@@ -31,5 +30,4 @@
   --mobile: 375px;
   --tablet: 768px;
   --desktop: 1440px;
-
 }
