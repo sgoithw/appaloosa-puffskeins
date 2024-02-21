@@ -1,1 +1,74 @@
-<section class="pop-up-window"></section>
+<div class="overlay hidden">
+    <div class="modal-exercises hidden">
+        <div class="modal-exersises-container">
+            <button class="modal-exercises-btn-close">
+                <svg class="modal-exersises-btn-icon" width="28" height="28">
+                    <use href="./img/icons.svg#icon-close-X"></use>
+                  </svg>
+            </button>
+            <img
+            class="modal-exercises-img"
+            alt="Exercise image"
+            loading="lazy"
+          />
+        </div>
+        <div>
+            <h2 class="modal-exercises-name">Air Bake</h2>  
+            <!-- <h2 class="modal-exercises-name">${name}</h2>   -->
+            <!-- <div class="modal-exercises-rating"> ${ratingStarsHTML}</div> -->
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="modal-exercises__container" data-id="${_id}">
+
+  
+    <div class="modal-exercises__card">
+      <h2 class="modal-exercises__name">${name}</h2>
+      <div class="modal-exercises__rating">${ratingStarsHTML}</div>
+  
+      <div class="modal-exercises__block">
+        <ul class="modal-exercises__list">
+          <li class="modal-exercises__item">
+            <h3 class="modal-exercises__subtitle">Target</h3>
+            <p class="modal-exercises__text">${target}</p>
+          </li>
+  
+          <li class="modal-exercises__item">
+            <h3 class="modal-exercises__subtitle">Body Part</h3>
+            <p class="modal-exercises__text">${bodyPart}</p>
+          </li>
+  
+          <li class="modal-exercises__item">
+            <h3 class="modal-exercises__subtitle">Equipment</h3>
+            <p class="modal-exercises__text">${equipment}</p>
+          </li>
+  
+          <li class="modal-exercises__item">
+            <h3 class="modal-exercises__subtitle">Popular</h3>
+            <p class="modal-exercises__text">${popularity}</p>
+          </li>
+          
+          <li class="modal-exercises__item">
+            <h3 class="modal-exercises__subtitle">Burned Calories</h3>
+            <p class="modal-exercises__text">${burnedCalories}/${time}</p>
+          </li>
+        </ul>
+        <p class="modal-exercises__description">${description}</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-exercises__btn-container">
+    <button class="modal-exercises__btn-favorites modal-exercises__btn" type="button" data-id="${_id}">
+      Add to favorites
+      <svg class="btn-favorites__icon">
+        <use href="${icons}#icon-favorites"></use>
+      </svg>
+    </button>
+    <button class="modal-exercises__btn-rating modal-exercises__btn" type="button" data-id="${_id}">Give a rating</button>
+  </div>
