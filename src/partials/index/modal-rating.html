@@ -1,4 +1,4 @@
-<div class="modal-rating overlay hidden">
+<div class="modal-rating overlay hidden" id='modal-rating'>
   <div class="rating-container">
     <a href="#" class="rating-close-btn">
       <svg
@@ -25,7 +25,7 @@
       <p class="rating-value">0.0</p>
 
       <input class="rating-input" type="ratio" id="star1" name="rating" />
-      <label class="rating-label" for="star1">
+      <label class="rating-label" for="star1" data-rate='1'>
         <svg
           class="rating-star"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
         </svg>
       </label>
       <input class="rating-input" type="ratio" id="star2" name="rating" />
-      <label class="rating-label" for="star2">
+      <label class="rating-label" for="star2" data-rate='2'>
         <svg
           class="rating-star"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
         </svg>
       </label>
       <input class="rating-input" type="ratio" id="star3" name="rating" />
-      <label class="rating-label" for="star3">
+      <label class="rating-label" for="star3" data-rate='3'>
         <svg
           class="rating-star"
           xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
         </svg>
       </label>
       <input class="rating-input" type="ratio" id="star4" name="rating" />
-      <label class="rating-label" for="star4">
+      <label class="rating-label" for="star4" data-rate='4'>
         <svg
           class="rating-star"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@
         </svg>
       </label>
       <input class="rating-input" type="ratio" id="star5" name="rating" />
-      <label class="rating-label" for="star5">
+      <label class="rating-label" for="star5" data-rate='5'>
         <svg
           class="rating-star"
           xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
         </svg>
       </label>
     </fieldset>
-    <form class="rating-form">
+    <form class="rating-form" id='rating-form'>
       <input
         class="rating-email"
         type="email"
@@ -121,11 +121,13 @@
 
       <textarea
         class="rating-comment"
-        name="comment"
+        name="review"
         placeholder="Your comment"
       ></textarea>
-
+      <input type='hidden' name='id'>
+      <input type='hidden' name='rate'>
       <button class="rating-submit-btn" type="submit">Send</button>
+
     </form>
   </div>
 </div>
