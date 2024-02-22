@@ -110,7 +110,7 @@ class YourEnergyAPI {
    * Method to create a subscription
    * @param data - object that contains email
    * @returns {Promise<Response>}
-   */
+   
   createSubscription(data) {
     return fetch(`${this.#baseUrl}/api/subscription`, {
       method: 'POST',
@@ -125,7 +125,13 @@ class YourEnergyAPI {
       throw new Error('Error creating subscription');
     });
   }
+  */
 }
 
 // Export an instance of YourEnergyAPI initialized with the base URL
 export default new YourEnergyAPI(BASE_URL);
+
+export const createSubscription = async data => {
+  const response = await api.post('/subscription', data);
+  return response.data;
+};
