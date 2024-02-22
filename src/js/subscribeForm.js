@@ -1,6 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { createSubscription } from './api';
+import { api } from './api';
 import { loader } from './loader';
 
 const emailInput = document.querySelector('.subscribe-input');
@@ -28,7 +28,7 @@ function handleSubmit(event) {
 
   loader.create();
 
-  createSubscription(data)
+  api.createSubscription(data)
     .then(response => {
       const respMessage = response.message;
       iziToast.show({
