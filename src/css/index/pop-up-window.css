@@ -91,6 +91,7 @@
   }
 
   .exercises-modal-rating-input {
+    background-color: transparent;
     width: 18px;
     height: 18px;
   }
@@ -194,6 +195,8 @@ border: 1px solid rgba(244, 244, 244, 0.2);
   gap: 16px;
   margin-bottom: 24px;
 }
+
+
 
 
 
@@ -376,3 +379,4 @@ border: 1px solid rgba(244, 244, 244, 0.2);
   color: var(--color-secondary);
   background-color: var(--color-primary);
 } */
+
