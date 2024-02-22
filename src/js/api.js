@@ -128,4 +128,4 @@ class YourEnergyAPI {
 }
 
 // Export an instance of YourEnergyAPI initialized with the base URL
-export  const api = new YourEnergyAPI(BASE_URL);
+export default new YourEnergyAPI(BASE_URL);
