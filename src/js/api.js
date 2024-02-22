@@ -122,9 +122,17 @@ class YourEnergyAPI {
       if (response.ok) {
         return response.json();
       }
-      throw new Error('Error creating subscription');
+      switch (response.status) {
+        case 409:
+          throw new Error('Email has been already subscribed');
+          break;
+        default:
+          throw new Error('Error creating subscription');
+          break;
+      }
     });
   }
+
 }
 
 // Export an instance of YourEnergyAPI initialized with the base URL
