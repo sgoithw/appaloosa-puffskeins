@@ -14,19 +14,7 @@ class ExerciseUI {
           rating,
           target,
           time,
-        }) => `  `
-           _id,
-           bodyPart,
-           burnedCalories,
-           description,
-           equipment,
-           gifUrl,
-           name,
-           popularity,
-           rating,
-           target,
-           time,
-         }) => `  `,
+        }) => ` `
       )
       .join('');
   }
@@ -41,15 +29,13 @@ class ExerciseUI {
                           <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
-                  </li>`,
+                  </li>`
       )
       .join('');
   }
-  getPaginationHTML(totalPages, page = 1, perPage = 9) {
 
   getPaginationHTML(totalPages, page = 1, perPage = 9) {
     let paginationHTML = '';
-    const paginationData = this.#makePaginationData(totalPages, page, perPage);
     const paginationData = this.#makePaginationData(totalPages, page, perPage);
 
     if (page > 1) {
@@ -64,22 +50,12 @@ class ExerciseUI {
     }
 
     paginationData.pages.forEach(page => {
-      paginationHTML += `<li class="exs-pagination-item ${
-    paginationData.pages.forEach(page => {
       paginationHTML += `<li class='exs-pagination-item ${
         paginationData.page === page ? 'active' : ''
-      }"><a class="exs-pagination-link" href="#" ${
+      }'><a class='exs-pagination-link' href='#' ${
         page !== '...' ? `data-page="${page}"` : ''
       }>${page}</a></li>`;
     });
-      }'><a class='exs-pagination-link' href='#' ${page !== '...' ? `data-page="${page}"` : ''}>${page}</a></li>`;
-    });
-
-    // for (let i = 1; i <= totalPages; i++) {
-    //   paginationHTML += `<li class="exs-pagination-item ${
-    //     i === page ? 'active' : ''
-    //   }"><a class="exs-pagination-link" href="#" data-page="${i}">${i}</a></li>`;
-    // }
 
     if (page < totalPages) {
       paginationHTML += `
@@ -103,8 +79,6 @@ class ExerciseUI {
    * @returns {{pages: *, nextPage: *, prevPage: number, page: (*|number), maxPage: *}}
    */
   #makePaginationData(maxPage, page = 1, perPage = 9) {
-  #makePaginationData(maxPage, page = 1, perPage = 9) {
-
     maxPage = maxPage > 1 ? maxPage : 1;
 
     let pagesArr = [];
@@ -115,11 +89,6 @@ class ExerciseUI {
         page < maxPage - 2 ? (page === 1 ? 2 : page) : maxPage - 3,
         page < maxPage - 2 ? (page === 1 ? 3 : page + 1) : maxPage - 2,
         page < maxPage - 3 ? '...' : maxPage - 1,
-        maxPage,
-        (page === 1 ? 1 : (page < (maxPage - 2) ? page - 1 : maxPage - 4)),
-        (page < (maxPage - 2) ? (page === 1 ? 2 : page) : maxPage - 3),
-        (page < (maxPage - 2) ? (page === 1 ? 3 : page + 1) : maxPage - 2),
-        (page < (maxPage - 3) ? '...' : maxPage - 1),
         maxPage,
       ];
     } else {
@@ -135,10 +104,7 @@ class ExerciseUI {
       nextPage: page < maxPage ? page + 1 : maxPage,
       prevPage: page > 1 ? page - 1 : 1,
     };
-    };
-
   }
 }
-
 
 export const exerciseUI = new ExerciseUI();
