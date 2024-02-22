@@ -106,22 +106,26 @@ section.exercises {
   align-items: center;
   text-align: center;
 }
+@media only screen and (min-width: 768px) {
+  .exs-card-item {
+    width: calc((100% - 15px * 2) / 3);
+  }
+}
+
 .exs-card-img {
   display: block;
-  width: 335px;
+  width: 100%;
   height: 225px;
   border-radius: 12px;
 }
 
 @media only screen and (min-width: 768px) {
   .exs-card-img {
-    width: 224px;
     height: 225px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .exs-card-img {
-    width: 290px;
     height: 242px;
   }
 }
