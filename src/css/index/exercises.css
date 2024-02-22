@@ -169,6 +169,9 @@ section.exercises {
   justify-content: center;
   align-items: center;
 }
+.exs-pagination-item:hover {
+  color: inherit;
+}
 .exs-pagination-item.active {
   color: inherit;
   border: 1px solid;
@@ -177,7 +180,9 @@ section.exercises {
 .icon-pagination-arrow {
   fill: var(--color-grey-notselected);
 }
-
+.icon-pagination-arrow:hover {
+  fill: inherit;
+}
 @media only screen and (min-width: 768px) {
   .exs-pagination-item {
     font-size: 24px;
