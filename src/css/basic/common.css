@@ -2,6 +2,13 @@
   /* FONTS */
   --font-family: 'DM Sans';
 
+  --font-size-normal: 16px;
+  --font-size-small: 14px;
+  --font-size-tiny: 12px;
+ 
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
   /* COLORS */
   --color-primary-100: rgba(36, 36, 36, 1); /* #242424*/
   --color-primary-10: rgba(36, 36, 36, 0.10); /*#242424*/
