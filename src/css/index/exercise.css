@@ -209,6 +209,7 @@ body {
 @media only screen and (min-width: 768px) {
   .exercise .title {
     margin-top: 25px;
+    width: 100%;
   }
 }
 
@@ -243,7 +244,8 @@ body {
 
 @media only screen and (min-width: 768px) {
   .exercise .title-text {
-    width: calc(100% - 40px);
+    max-width: 272px;
+
     padding-top: 0px;
     padding-bottom: 0px;
     
@@ -254,8 +256,7 @@ body {
 
 @media only screen and (min-width: 1440px) {
   .exercise .title-text {
-    max-width: unset;
-    width: unset;
+    max-width: 370px;
   }
 }
 
