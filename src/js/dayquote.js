@@ -1,4 +1,4 @@
-import dayquote from './api';
+import {api} from './api';
 
 const refs = {
   quoteTextEl: document.querySelector('.quote-text'),
@@ -17,7 +17,7 @@ function checkDate() {
   }
 }
 function fetchData() {
-  dayquote.quotes().then(data => {
+  api.quotes().then(data => {
     renderQuote(data.quote, data.author);
     saveDataToLocalStorage(data.quote, data.author, currentDate);
   });
