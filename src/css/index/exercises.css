@@ -107,7 +107,6 @@ section.exercises {
   align-items: center;
   text-align: center;
 
-  filter: brightness(50%);
   cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
@@ -121,6 +120,7 @@ section.exercises {
   width: 100%;
   height: 225px;
   border-radius: 12px;
+  filter: brightness(50%);
 }
 
 @media only screen and (min-width: 768px) {
@@ -312,6 +312,7 @@ section.exercises {
   display: block;
   margin-top: 20px;
   border-radius: 20px;
+  width: 100;
 }
 @media only screen and (min-width: 768px) {
   .quote-block-image > img {
