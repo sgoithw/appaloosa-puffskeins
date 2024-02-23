@@ -1,2 +1,3 @@
-import 'modern-normalize/modern-normalize.css';
 import '../js/header.js';
+import '../js/subscribeForm.js';
+import './dayquote.js';

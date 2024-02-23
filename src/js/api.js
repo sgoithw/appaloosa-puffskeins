@@ -31,7 +31,7 @@ class YourEnergyAPI {
           return response.json(); // Parse response as JSON if successful
         }
         throw new Error('Error fetching filters'); // Throw error if request fails
-      }
+      },
     );
   }
 
@@ -55,7 +55,7 @@ class YourEnergyAPI {
           return response.json();
         }
         throw new Error('Error fetching exercises');
-      }
+      },
     );
   }
 
@@ -122,10 +122,18 @@ class YourEnergyAPI {
       if (response.ok) {
         return response.json();
       }
-      throw new Error('Error creating subscription');
+      switch (response.status) {
+        case 409:
+          throw new Error('Email has been already subscribed');
+          break;
+        default:
+          throw new Error('Error creating subscription');
+          break;
+      }
     });
   }
+
 }
 
 // Export an instance of YourEnergyAPI initialized with the base URL
-export default new YourEnergyAPI(BASE_URL);
+export const api = new YourEnergyAPI(BASE_URL);
