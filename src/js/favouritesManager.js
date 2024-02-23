@@ -43,7 +43,7 @@ class FavouritesManager {
    */
   isFavorite(exerciseId) {
     const favourites = this.getFavorites();
-    return favourites.some(exercise => exercise.id === exerciseId);
+    return favourites.some(exercise => exercise._id === exerciseId);
   }
 }
 
