@@ -29,6 +29,8 @@
     grid-template-areas:
       'head hashtag'
       'image image';
+    grid-template-columns: auto 200px;
+    gap: 32px;
   }
 }
 
@@ -54,6 +56,7 @@
     align-items: flex-end;
     gap: 32px;
     width: 200px;
+    grid-area: hashtag;
   }
 }
 
@@ -61,7 +64,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-end;
   align-content: center;
   flex-direction: row;
   gap: 8px;
@@ -74,7 +77,9 @@
 }
 
 .hero-hashtag-item {
+  font-size: 14px;
   display: flex;
+  padding: 4px 11px;
   justify-content: center;
   align-items: center;
   border-radius: var(--radius-medium);
@@ -113,14 +118,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: 44px;
-  letter-spacing: -0.76px;
+  letter-spacing: -0.1px;
   margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .hero-header {
     font-size: 74px;
     line-height: 74px;
-    letter-spacing: -1.48px;
+    letter-spacing: -0.1px;
   }
 }
 
@@ -156,14 +161,14 @@
 .hero-text {
   font-size: 14px;
   line-height: 18px;
-  letter-spacing: -1.48px;
+  letter-spacing: -0.1px;
 }
 
 @media (min-width: 768px) {
   .hero-text {
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: -1.48px;
+    letter-spacing: -0.1px;
     width: 528px;
   }
 }
