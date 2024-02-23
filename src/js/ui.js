@@ -1,5 +1,4 @@
 class ExerciseUI {
-
   /**
    * * Type of exercise card.
    * Different features may be added to a card with different type.
@@ -22,7 +21,9 @@ class ExerciseUI {
    */
   getExerciseListHTML(arr, cardType) {
     if (!ExerciseUI.exerciseCardType[cardType]) {
-      console.error(`Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`);
+      console.error(
+        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`
+      );
       return '';
     }
 
@@ -37,18 +38,19 @@ class ExerciseUI {
           </button>`;
     }
 
-    return arr.map((el) => {
-      if (cardType === ExerciseUI.exerciseCardType.HOME) {
-        featureMarkup = `
+    return arr
+      .map(el => {
+        if (cardType === ExerciseUI.exerciseCardType.HOME) {
+          featureMarkup = `
         <div class='rating'>
         <span class='rating-value'>${el.rating}</span>
         <svg class='rating-icon' width='18' height='18'>
         <use href='./../../img/icons.svg#icon-Star'></use>
         </svg>
         </div>`;
-      }
+        }
 
-      return `
+        return `
       <li class='exercise' data-exercise-id='${el._id}'>
         <button class='main-action-btn' type='button'>
           Start
@@ -64,12 +66,16 @@ class ExerciseUI {
           <svg class='title-icon' width='14' height='16'>
             <use href='./../../img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
-          <span class='title-text text-clipped'>${el.name.charAt(0).toUpperCase() + el.name.slice(1)}</span>
+          <span class='title-text text-clipped'>${
+            el.name.charAt(0).toUpperCase() + el.name.slice(1)
+          }</span>
         </div>
         <div class='details'>
           <div class='detail'>
             <span class='detail-title'>Burned calories:</span>
-            <span class='detail-value text-clipped'>${el.burnedCalories} / ${el.time} min</span>
+            <span class='detail-value text-clipped'>${el.burnedCalories} / ${
+          el.time
+        } min</span>
           </div>
           <div class='detail'>
             <span class='detail-title'>Body part:</span>
@@ -81,10 +87,12 @@ class ExerciseUI {
           </div>
         </div>
       </li>`;
-    }).join('');
+      })
+      .join('');
   }
 
   getExerciseCategoryListHTML(exercises) {
+    console.log(exercises);
     return exercises
       .map(
         ({ filter, name, imgURL }) => `
@@ -94,7 +102,7 @@ class ExerciseUI {
                           <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
-                  </li>`,
+                  </li>`
       )
       .join('');
   }
