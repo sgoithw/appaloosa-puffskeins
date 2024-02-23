@@ -5,7 +5,7 @@
 
 @import url('./index/header.css');
 @import url('./index/hero.css');
-@import url('./index/filters.css');
+@import url('./index/breadcrumbs-filter.css');
 @import url('./index/exercises.css');
 @import url('./index/comment-form.css');
 @import url('./index/pop-up-window.css');
