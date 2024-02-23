@@ -1,3 +1,14 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  backdrop-filter: blur(3px);
+  background: var(--color-modal-backdrop-40);
+}
+
 .rating-container {
     position: relative;
     display: flex;
@@ -167,6 +178,14 @@
     color: var(--color-primary-100);
   }
   
+  .rating-submit-btn:hover,
+     .rating-submit-btn:focus {
+    background-color: var(--color-primary-100);
+    color: var(--color-secondary-100);
+    border: 1px solid #F4F4F4;
+    transition: all 750ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   @media screen and (min-width: 768px) {
     .rating-submit-btn {
       font-size: 16px;

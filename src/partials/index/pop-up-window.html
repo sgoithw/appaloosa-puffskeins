@@ -1,7 +1,9 @@
 <div class="overlay exercises-popup" id="exercises-popup">
   <div class="exercises-modal">
     <div class="exercises-modal-left">
-      <img src="" alt="" class="exercises-modal-image" />
+      <img class="exercises-modal-image"
+      src="../../img/gif-min.png" 
+      alt="exercise for body-part"  />
     </div>
 
     <div class="exercises-modal-right">
@@ -9,8 +11,8 @@
         <svg
           class="exercises-modal-close-icon"
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          width="24"
+          height="24"
           viewBox="0 0 32 32"
           fill="none"
         >
@@ -25,146 +27,123 @@
 
       <h3 class="exercises-modal-title">Air Bake</h3>
 
-      <!-- <div class="exercises-modal-rating">
-        <span class="exercises-modal-rate">4.0</span>
-        <ul class="exercises-modal-stars">
-          <li class="exercises-modal-star"></li>
-          <li class="exercises-modal-star"></li>
-          <li class="exercises-modal-star"></li>
-          <li class="exercises-modal-star"></li>
-          <li class="exercises-modal-star"></li>
-        </ul>
-      </div> -->
-
-      <fieldset class="exercises-modal-rating">
-        <p class="exercises-modal-rating-value">4.0</p>
-
-        <input
-          class="exercises-modal-rating-input"
-          type="ratio"
-          id="star1"
-          name="rating"
-        />
-        <label class="exercises-modal-rating-label" for="star1" data-rate="1">
-          <svg
-            class="rating-star"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 32 32"
-            fill="none"
-          >
-            <path
-              d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
-              fill="#F4F4F4"
-              fill-opacity="0.2"
-            />
-          </svg>
-        </label>
-        <input
-          class="exercises-modal-rating-input"
-          type="ratio"
-          id="star2"
-          name="rating"
-        />
-        <label class="exercises-modal-rating-label" for="star2" data-rate="2">
-          <svg
-            class="rating-star"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 32 32"
-            fill="none"
-          >
-            <path
-              d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
-              fill="#F4F4F4"
-              fill-opacity="0.2"
-            />
-          </svg>
-        </label>
-        <input
-          class="exercises-modal-rating-input"
-          type="ratio"
-          id="star3"
-          name="rating"
-        />
-        <label class="exercises-modal-rating-label" for="star3" data-rate="3">
-          <svg
-            class="rating-star"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 32 32"
-            fill="none"
-          >
-            <path
-              d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
-              fill="#F4F4F4"
-              fill-opacity="0.2"
-            />
-          </svg>
-        </label>
-        <input
-          class="exercises-modal-rating-input"
-          type="ratio"
-          id="star4"
-          name="rating"
-        />
-        <label class="exercises-modal-rating-label" for="star4" data-rate="4">
-          <svg
-            class="rating-star"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 32 32"
-            fill="none"
-          >
-            <path
-              d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
-              fill="#F4F4F4"
-              fill-opacity="0.2"
-            />
-          </svg>
-        </label>
-        <input
-          class="exercises-modal-rating-input"
-          type="ratio"
-          id="star5"
-          name="rating"
-        />
-        <label class="exercises-modal-rating-label" for="star5" data-rate="5">
-          <svg
-            class="rating-star"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 32 32"
-            fill="none"
-          >
-            <path
-              d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
-              fill="#F4F4F4"
-              fill-opacity="0.2"
-            />
-          </svg>
-        </label>
-      </fieldset>
+      <div class="exercises-modal-rating-container">
+        <span class="exercises-modal-rating-value">4.0</span>
+        <fieldset class="exercises-modal-rating">
+          <input
+            class="exercises-modal-rating-input"
+            type="ratio"
+            id="star1"
+            name="rating"
+          />
+          <label class="exercises-modal-rating-label" for="star1" data-rate="1">
+            <svg
+              class="exercises-rating-star"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
+                fill="#F4F4F4"
+                fill-opacity="0.2"
+              />
+            </svg>
+          </label>
+          <input
+            class="exercises-modal-rating-input"
+            type="ratio"
+            id="star2"
+            name="rating"
+          />
+          <label class="exercises-modal-rating-label" for="star2" data-rate="2">
+            <svg
+              class="exercises-rating-star"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
+                fill="#F4F4F4"
+                fill-opacity="0.2"
+              />
+            </svg>
+          </label>
+          <input
+            class="exercises-modal-rating-input"
+            type="ratio"
+            id="star3"
+            name="rating"
+          />
+          <label class="exercises-modal-rating-label" for="star3" data-rate="3">
+            <svg
+              class="exercises-rating-star"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
+                fill="#F4F4F4"
+                fill-opacity="0.2"
+              />
+            </svg>
+          </label>
+          <input
+            class="exercises-modal-rating-input"
+            type="ratio"
+            id="star4"
+            name="rating"
+          />
+          <label class="exercises-modal-rating-label" for="star4" data-rate="4">
+            <svg
+              class="exercises-rating-star"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
+                fill="#F4F4F4"
+                fill-opacity="0.2"
+              />
+            </svg>
+          </label>
+          <input
+            class="exercises-modal-rating-input"
+            type="ratio"
+            id="star5"
+            name="rating"
+          />
+          <label class="exercises-modal-rating-label" for="star5" data-rate="5">
+            <svg
+              class="exercises-rating-star"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M13.826 3.262c.684-2.106 3.663-2.106 4.348 0l1.932 5.945a2.285 2.285 0 0 0 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674a2.286 2.286 0 0 0-.83 2.556l1.931 5.945c.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674a2.286 2.286 0 0 0-2.687 0l-5.057 3.674c-1.791 1.302-4.202-.45-3.517-2.555l1.932-5.945a2.287 2.287 0 0 0-.83-2.556l-5.057-3.674c-1.791-1.302-.871-4.135 1.344-4.135h6.251c.99 0 1.868-.638 2.174-1.579l1.932-5.945z"
+                fill="#F4F4F4"
+                fill-opacity="0.2"
+              />
+            </svg>
+          </label>
+        </fieldset>
+      </div>
 
       <hr class="exercises-modal-line" />
-
-      <!-- <dl class="exercises-modal-info">
-        <dt>Target</dt>
-        <dd>Body Part</dd>
-        <dt>Equipment</dt>
-        <dd>Popular</dd>
-        <dt>Abs</dt>
-        <dd>Waist</dd>
-        <dt>Body weight</dt>
-        <dd>150</dd>
-        <dt>Burned calories</dt>
-        <dd>323/3 min</dd>
-      </dl> -->
 
       <ul class="excercises-modal-list">
         <li class="excercises-modal-item">
@@ -192,7 +171,8 @@
           <p class="excercises-modal-aftertitle js-burned-calories"></p>
         </li>
       </ul>
-      <hr />
+      
+      <hr class="exercises-modal-line-second" />
 
       <p class="exercises-modal-description">
         This refers to your core muscles, which include the rectus abdominis,
