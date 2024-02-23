@@ -111,12 +111,12 @@ function createMarkup({
           />
           <label class="exercises-modal-rating-label" for="star1" data-rate="1">
             <svg
-            class="exercises-modal-favorite-icon"
+            class="exercises-modal-favorite-icon rating-star rated"
             width="20"
             height="20"
             viewBox="0 0 32 32"
           >
-            <use href="/img/icons.svg#icon-favorites"></use>
+            <use href="/img/icons.svg#icon-star"></use>
           </svg>
           </label>
           <input
@@ -127,12 +127,12 @@ function createMarkup({
           />
           <label class="exercises-modal-rating-label" for="star2" data-rate="2">
             <svg
-            class="exercises-modal-favorite-icon"
+            class="exercises-modal-favorite-icon rating-star rated"
             width="20"
             height="20"
             viewBox="0 0 32 32"
           >
-            <use href="/img/icons.svg#icon-favorites"></use>
+            <use href="/img/icons.svg#icon-star"></use>
           </svg>
           </label>
           <input
@@ -143,12 +143,12 @@ function createMarkup({
           />
           <label class="exercises-modal-rating-label" for="star3" data-rate="3">
             <svg
-            class="exercises-modal-favorite-icon"
+            class="exercises-modal-favorite-icon rating-star rated"
             width="20"
             height="20"
             viewBox="0 0 32 32"
           >
-            <use href="/img/icons.svg#icon-favorites"></use>
+            <use href="/img/icons.svg#icon-star"></use>
           </svg>
           </label>
           <input
@@ -159,12 +159,12 @@ function createMarkup({
           />
           <label class="exercises-modal-rating-label" for="star4" data-rate="4">
             <svg
-            class="exercises-modal-favorite-icon"
+            class="exercises-modal-favorite-icon rating-star rated"
             width="20"
             height="20"
             viewBox="0 0 32 32"
           >
-            <use href="/img/icons.svg#icon-favorites"></use>
+            <use href="/img/icons.svg#icon-star"></use>
           </svg>
           </label>
           <input
@@ -175,12 +175,12 @@ function createMarkup({
           />
           <label class="exercises-modal-rating-label" for="star5" data-rate="5">
             <svg
-            class="exercises-modal-favorite-icon"
+            class="exercises-modal-favorite-icon rating-star"
             width="20"
             height="20"
             viewBox="0 0 32 32"
           >
-            <use href="/img/icons.svg#icon-favorites"></use>
+            <use href="/img/icons.svg#icon-star"></use>
           </svg>
           </label>
         </fieldset>
