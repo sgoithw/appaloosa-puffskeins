@@ -465,6 +465,16 @@
     flex-direction: column;
   }
 
+  .favorites .cards-container {
+    
+  }
+
+  .favorites .exercises-cards-list {
+    min-width: 900;
+    max-height: 487px;
+    overflow: auto;
+  }
+
   .quote-container {
     gap: 32px;
   }
