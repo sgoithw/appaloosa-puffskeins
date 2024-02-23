@@ -1,5 +1,6 @@
 import { api } from './api';
 import { exerciseUI } from './ui';
+import { listenClick } from './exercises';
 
 const exerciseContainer = document.querySelector('.exercises-cards-list');
 const paginationContainer = document.querySelector('.exs-pagination');
@@ -23,6 +24,7 @@ async function updateExerciseListAndPagination(filter, page = 1) {
       totalPages,
       page
     );
+    listenClick();
   } catch (error) {
     console.error('Error fetching exercises:', error);
   }
