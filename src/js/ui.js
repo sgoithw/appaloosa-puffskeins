@@ -89,7 +89,7 @@ class ExerciseUI {
       .map(
         ({ filter, name, imgURL }) => `
               <li class='exs-card-item' data-name='${name}'>
-                  <img class='xs-card-img' src='${imgURL}' alt='${name}' />
+                  <img class='exs-card-img' src='${imgURL}' alt='${name}' />
                       <div class='exs-card-container'>
                           <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
