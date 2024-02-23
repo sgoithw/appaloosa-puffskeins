@@ -18,6 +18,7 @@ function handleSubmit(event) {
   if (!emailPattern.test(email)) {
     iziToast.show({
       position: 'center',
+      timeout: 5000,
       color: 'red',
       message: `Please enter valid email`,
     });
@@ -28,21 +29,23 @@ function handleSubmit(event) {
 
   //loader.create();
 
-  api.createSubscription({
-    email,
-  })
+  api
+    .createSubscription({
+      email,
+    })
     .then(response => {
       const respMessage = response.message;
       iziToast.show({
         position: 'center',
-        color: 'green',
-        message: `${respMessage}`,
+        color: 'white',
+        message: respMessage.replace(/([^\w!]) /g, '$1<br>'),
       });
     })
     .catch(err => {
       iziToast.show({
         position: 'center',
-        color: 'red',
+        messageColor: 'red',
+        color: 'white',
         message: err.message,
       });
     })

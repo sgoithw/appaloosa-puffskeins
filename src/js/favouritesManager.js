@@ -23,7 +23,7 @@ class FavouritesManager {
    */
   removeExerciseFromFavorites(exerciseId) {
     let favourites = this.getFavorites();
-    favourites = favourites.filter(exercise => exercise.id !== exerciseId);
+    favourites = favourites.filter(exercise => exercise._id !== exerciseId);
     localStorage.setItem(this.favouritesKey, JSON.stringify(favourites));
   }
 
@@ -43,7 +43,7 @@ class FavouritesManager {
    */
   isFavorite(exerciseId) {
     const favourites = this.getFavorites();
-    return favourites.some(exercise => exercise.id === exerciseId);
+    return favourites.some(exercise => exercise._id === exerciseId);
   }
 }
 
