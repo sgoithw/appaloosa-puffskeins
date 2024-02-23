@@ -12,7 +12,4 @@
 @import url('./index/pop-up-window.css');
 @import url('./index/modal-rating.css');
 @import url('./index/footer.css');
-
-
-@import url('./basic/common.css');
-@import url('./basic/reset.css');
+@import url('./favorites/favorites.css');
