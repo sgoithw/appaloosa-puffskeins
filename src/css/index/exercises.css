@@ -15,12 +15,70 @@
     padding-bottom: 132px;
   }
 }
+.exercises-title {
+  font-weight: var(--font-weight-normal);
+  font-size: 28px;
+  line-height: 1.36;
+}
+@media only screen and (min-width: 768px) {
+  .exercises-title {
+    font-size: 44px;
+    line-height: 1.09;
+  }
+}
+.exercises-filter {
+  margin-top: 20px;
+  font-size: var(--font-size-small);
+
+  display: flex;
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercises-filter {
+    font-size: var(--font-size-normal);
+    line-height: 1.5;
+  }
+}
 
 @media only screen and (min-width: 1440px) {
   .exs-title-container {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.exercises-item {
+  color: var(--color-primary-60);
+  font-size: var(--font-size-small);
+  line-height: 1.43;
+  cursor: pointer;
+
+  height: 28px;
+}
+@media only screen and (min-width: 768px) {
+  .exercises-item {
+    font-size: var(--font-size-normal);
+    line-height: 1.5;
+  }
+}
+.exercises-item.active {
+  color: inherit;
+
+  position: relative;
+}
+.exercises-item.active::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+
+  display: block;
+  bottom: 0px;
+  left: 0;
+
+  background-color: var(--color-primary-100);
 }
 
 .exercises-cards-list {
@@ -53,26 +111,32 @@
   display: flex;
   align-items: center;
   text-align: center;
+
+  filter: brightness(50%);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .exs-card-item {
+    width: calc((100% - 15px * 2) / 3);
+  }
 }
 
 .exs-card-img {
   display: block;
-  width: 335px;
+  width: 100%;
   height: 225px;
   border-radius: 12px;
-  filter: brightness(50%);
 }
 
 @media only screen and (min-width: 768px) {
   .exs-card-img {
-    width: 224px;
     height: 225px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .exs-card-img {
-    width: 290px;
     height: 242px;
   }
 }
@@ -88,14 +152,14 @@
 }
 
 .exs-card-title {
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   font-size: 24px;
 }
 
 .exs-card-description {
   margin-top: 2px;
   color: var(--color-secondary-40);
-  font-size: 12px;
+  font-size: var(--font-size-tiny);
   line-height: 1.5;
 }
 
@@ -119,6 +183,7 @@
 
   color: var(--color-grey-notselected);
   font-size: 20px;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
@@ -242,7 +307,7 @@
 .quote-title {
   color: var(--color-secondary-100);
   font-size: 20px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1;
 }
 
@@ -256,7 +321,7 @@
 .quote-text {
   margin-top: 8px;
   color: var(--color-secondary-60);
-  font-size: 14px;
+  font-size: var(--font-size-small);
   line-height: 1.29;
 }
 
@@ -270,7 +335,7 @@
 
 @media only screen and (min-width: 768px) {
   .quote-author {
-    font-size: 16px;
+    font-size: var(--font-size-normal);
     line-height: 1.5;
   }
 }
@@ -349,13 +414,12 @@
 }
 
 .news-label {
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   font-size: 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .news-label {
-    font-weight: 600;
     font-size: 24px;
     line-height: 1.33;
   }
