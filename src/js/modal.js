@@ -214,7 +214,7 @@ function createMarkup({
           <p class="excercises-modal-aftertitle js-burned-calories"></p>
         </li>
       </ul>
-      
+
       <hr class="exercises-modal-line-second" />
 
       <p class="exercises-modal-description">${description}</p>
@@ -234,7 +234,7 @@ function createMarkup({
             <use href="/img/icons.svg#icon-heart"></use>
           </svg>
         </button>
-        <button class="exercises-modal-rating-btn">Give a rating</button>
+<!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
       </div>
   </div>
 `;
