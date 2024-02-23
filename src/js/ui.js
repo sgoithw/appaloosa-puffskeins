@@ -2,7 +2,6 @@
  * ...
  */
 class PopupUI {
-
   /**
    * Returns exercise details
    * html string
@@ -10,18 +9,18 @@ class PopupUI {
    * @param exercise
    */
   getExerciseDetailsHTML({
-                           _id,
-                           bodyPart,
-                           equipment,
-                           gifUrl,
-                           name,
-                           target,
-                           description,
-                           rating,
-                           burnedCalories,
-                           time,
-                           popularity,
-                         }) {
+    _id,
+    bodyPart,
+    equipment,
+    gifUrl,
+    name,
+    target,
+    description,
+    rating,
+    burnedCalories,
+    time,
+    popularity,
+  }) {
     return `
   <div class="modal-exercises">
         <div class="modal-exersises-container">
@@ -175,7 +174,6 @@ class PopupUI {
     </div>
 `;
   }
-
 }
 
 class ExerciseUI {
@@ -294,7 +292,7 @@ class ExerciseUI {
     if (page > 1) {
       paginationHTML += `
         <li class='exs-pagination-item'>
-            <a class='exs-pagination-link' href='#' data-page='${page - 1} '>
+            <a class='exs-pagination-link' data-page='${page - 1} '>
                 <svg class='icon-pagination-arrow' width='20' height='20'>
                     <use href='../../img/icons.svg#icon-fi-rr-angle-small-left'></use>
                 </svg>
@@ -305,7 +303,7 @@ class ExerciseUI {
     paginationData.pages.forEach(page => {
       paginationHTML += `<li class='exs-pagination-item ${
         paginationData.page === page ? 'active' : ''
-      }'><a class='exs-pagination-link' href='#' ${
+      }'><a class='exs-pagination-link' ${
         page !== '...' ? `data-page="${page}"` : ''
       }>${page}</a></li>`;
     });
@@ -313,7 +311,7 @@ class ExerciseUI {
     if (page < totalPages) {
       paginationHTML += `
         <li class='exs-pagination-item'>
-            <a class='exs-pagination-link' href='#' data-page='${page + 1} '>
+            <a class='exs-pagination-link' data-page='${page + 1} '>
                 <svg class='icon-pagination-arrow' width='20' height='20'>
                     <use href='../../img/icons.svg#icon-fi-rr-angle-small-right'></use>
                 </svg>
