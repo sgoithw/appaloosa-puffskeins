@@ -10,25 +10,29 @@ class PopupUI {
    * @param exercise
    */
   getExerciseDetailsHTML({
-                           _id,
-                           bodyPart,
-                           equipment,
-                           gifUrl,
-                           name,
-                           target,
-                           description,
-                           rating,
-                           burnedCalories,
-                           time,
-                           popularity,
-                           isFavorite,
-                         }) {
+    _id,
+    bodyPart,
+    equipment,
+    gifUrl,
+    name,
+    target,
+    description,
+    rating,
+    burnedCalories,
+    time,
+    popularity,
+    isFavorite,
+  }) {
     return `
   <div class='exercises-modal' data-id='${_id}'>
   <div class='exercises-container'">
     <div class='exercises-modal-left'>
       <img class='exercises-modal-image'
-      ${gifUrl ? `src=${gifUrl}` : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`}
+      ${
+        gifUrl
+          ? `src=${gifUrl}`
+          : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`
+      }
       alt='exercise for body-part'  />
     </div>
 
@@ -52,7 +56,9 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star1'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 1 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 1 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
@@ -68,7 +74,9 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star2'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 2 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 2 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
@@ -84,7 +92,9 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star3'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 3 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 3 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
@@ -100,7 +110,9 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star4'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 4 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 4 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
@@ -116,7 +128,9 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star5'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 5 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 5 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
@@ -206,7 +220,7 @@ export class ExerciseUI {
   getExerciseListHTML(arr, cardType) {
     if (!ExerciseUI.exerciseCardType[cardType]) {
       console.error(
-        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`,
+        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`
       );
       return '';
     }
@@ -253,8 +267,8 @@ export class ExerciseUI {
             <use href='${icons}#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
           <span class='title-text text-clipped'>${
-          el.name.charAt(0).toUpperCase() + el.name.slice(1)
-        }</span>
+            el.name.charAt(0).toUpperCase() + el.name.slice(1)
+          }</span>
         </div>
         <div class='details'>
           <div class='detail'>
@@ -288,13 +302,17 @@ export class ExerciseUI {
                           <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
-                  </li>`,
+                  </li>`
       )
       .join('');
   }
 
   getPaginationHTML(totalPages, page = 1, perPage = 9) {
     let paginationHTML = '';
+    if (totalPages < 1) {
+      return paginationHTML;
+    }
+
     let toNumber = e => {
       e = parseInt(e);
       return isNaN(e) ? 0 : e;
@@ -304,15 +322,25 @@ export class ExerciseUI {
     perPage = toNumber(perPage);
     const paginationData = this.#makePaginationData(totalPages, page, perPage);
 
-    if (page > 1) {
-      paginationHTML += `
-        <li class='exs-pagination-item'>
-            <a class='exs-pagination-link' data-page='${page - 1} '>
-                <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='${icons}#icon-fi-rr-angle-small-left'></use>
-                </svg>
+
+    if (totalPages > 5) {
+      if (page > 1) {
+        paginationHTML += `
+          <li class='exs-pagination-item circle'>
+            <a class='exs-pagination-link ' data-page='1'>
+              <svg class='icon-pagination-arrow' width='32' height='32'>
+                <use href='./img/icons.svg#icon-double-arrow-left'></use>
+              </svg>
             </a>
-        </li>`;
+          </li>
+          <li class='exs-pagination-item circle'>
+            <a class='exs-pagination-link ' data-page='${page - 1} '>
+              <svg class='icon-pagination-arrow' width='20' height='20'>
+                <use href='./img/icons.svg#icon-fi-rr-angle-small-left'></use>
+              </svg>
+            </a>
+          </li>`;
+      }
     }
 
     paginationData.pages.forEach(page => {
@@ -323,15 +351,24 @@ export class ExerciseUI {
       }>${page}</a></li>`;
     });
 
-    if (page < totalPages) {
-      paginationHTML += `
-        <li class='exs-pagination-item'>
-            <a class='exs-pagination-link' data-page='${page + 1} '>
-                <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='${icons}#icon-fi-rr-angle-small-right'></use>
-                </svg>
+    if (totalPages > 5) {
+      if (page < totalPages) {
+        paginationHTML += `
+          <li class='exs-pagination-item circle'>
+          <a class='exs-pagination-link ' data-page='${page + 1} '>
+            <svg class='icon-pagination-arrow' width='20' height='20'>
+              <use href='./img/icons.svg#icon-fi-rr-angle-small-right'></use>
+            </svg>
             </a>
+        </li>
+        <li class='exs-pagination-item circle'>
+          <a class='exs-pagination-link ' data-page='${totalPages}'>
+            <svg class='icon-pagination-arrow' width='32' height='32'>
+              <use href='./img/icons.svg#icon-double-arrow-right'></use>
+            </svg>
+          </a>
         </li>`;
+      }
     }
     return paginationHTML;
   }
