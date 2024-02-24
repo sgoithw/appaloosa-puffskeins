@@ -1,3 +1,7 @@
+import icons from '../img/icons.svg';
+import placeholderImg from '../img/modal-exercise-image.jpg';
+import placeholderImg2x from '../img/modal-exercise-image@2x.jpg';
+
 /**
  * ...
  */
@@ -27,14 +31,14 @@ class PopupUI {
   <div class='exercises-container'">
     <div class='exercises-modal-left'>
       <img class='exercises-modal-image'
-      ${gifUrl ? `src=${gifUrl}` : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`}
+      ${gifUrl ? `src=${gifUrl}` : `srcset = '${placeholderImg} 1x,${placeholderImg2x} 2x' src = '${placeholderImg}'`}
       alt='exercise for body-part'  />
     </div>
 
     <div class='exercises-modal-right'>
       <button class='exercises-modal-close modal-closed-btn'>
             <svg width='24' height='24'>
-                <use href='./img/icons.svg#icon-close-x'></use>
+                <use href='${icons}#icon-close-x'></use>
             </svg>
       </button>
 
@@ -56,7 +60,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -72,7 +76,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -88,7 +92,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -104,7 +108,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -120,7 +124,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
         </fieldset>
@@ -171,7 +175,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-heart'></use>
+            <use href='${icons}#icon-heart'></use>
           </svg>
         </button>
 <!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
@@ -216,7 +220,7 @@ export class ExerciseUI {
       featureMarkup = `
         <button class='js-remove move-to-trash-btn' type='button'>
         <svg class='move-to-trash-icon' width='16' height='16'>
-              <use href='./img/icons.svg#icon-trash'></use>
+              <use href='${icons}#icon-trash'></use>
             </svg>
           </button>`;
     }
@@ -228,7 +232,7 @@ export class ExerciseUI {
         <div class='rating'>
         <span class='rating-value'>${el.rating}</span>
         <svg class='rating-icon' width='18' height='18'>
-        <use href='./img/icons.svg#icon-Star'></use>
+        <use href='${icons}#icon-Star'></use>
         </svg>
         </div>`;
         }
@@ -240,7 +244,7 @@ export class ExerciseUI {
         }' type='button'>
           Start
           <svg class='main-action-arrow-icon' width='16' height='16'>
-            <use href='./img/icons.svg#icon-arrow-right'></use>
+            <use href='${icons}#icon-arrow-right'></use>
           </svg>
         </button>
         <div class='top'>
@@ -249,7 +253,7 @@ export class ExerciseUI {
         </div>
         <div class='title'>
           <svg class='title-icon' width='14' height='16'>
-            <use href='./img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
+            <use href='${icons}#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
           <span class='title-text text-clipped'>${
           el.name.charAt(0).toUpperCase() + el.name.slice(1)
@@ -308,7 +312,7 @@ export class ExerciseUI {
         <li class='exs-pagination-item'>
             <a class='exs-pagination-link' data-page='${page - 1} '>
                 <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='./img/icons.svg#icon-fi-rr-angle-small-left'></use>
+                    <use href='${icons}#icon-fi-rr-angle-small-left'></use>
                 </svg>
             </a>
         </li>`;
@@ -327,7 +331,7 @@ export class ExerciseUI {
         <li class='exs-pagination-item'>
             <a class='exs-pagination-link' data-page='${page + 1} '>
                 <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='./img/icons.svg#icon-fi-rr-angle-small-right'></use>
+                    <use href='${icons}#icon-fi-rr-angle-small-right'></use>
                 </svg>
             </a>
         </li>`;
