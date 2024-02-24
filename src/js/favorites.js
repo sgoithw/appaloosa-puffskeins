@@ -1,5 +1,7 @@
 import { favouritesManager  } from "./favouritesManager";
 import { exerciseUI, ExerciseUI } from "./ui";
+import "./header.js"
+import "./modal.js"
 
 
 const exercisesContainer = document.querySelector(".favorites .exercises-cards-list");
