@@ -97,7 +97,7 @@
 }
 
 .rating-value {
-  color: var(--color-secondary-100);
+  color: var(--color-primary-100);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
