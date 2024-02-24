@@ -289,3 +289,6 @@
     width: 342px;
   }
 }
+.excercises-modal-aftertitle.js-burned-calories {
+  text-transform: lowercase;
+}

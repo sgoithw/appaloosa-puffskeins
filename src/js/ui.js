@@ -162,7 +162,7 @@ class PopupUI {
         </li>
         <li class='excercises-modal-item'>
           <h4 class='excercises-modal-title'>Burned calories</h4>
-          <p class='excercises-modal-aftertitle js-burned-calories'>${burnedCalories}/${time}</p>
+          <p class='excercises-modal-aftertitle js-burned-calories'>${burnedCalories}/${time} min</p>
         </li>
         <li class='excercises-modal-item'>
           <h4 class='excercises-modal-title'></h4>
@@ -320,7 +320,6 @@ export class ExerciseUI {
     page = toNumber(page);
     perPage = toNumber(perPage);
     const paginationData = this.#makePaginationData(totalPages, page, perPage);
-
 
     if (totalPages > 5) {
       if (page > 1) {
