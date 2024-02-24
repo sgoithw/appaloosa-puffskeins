@@ -1,5 +1,7 @@
 import { api } from './api';
 import { exerciseUI, ExerciseUI } from './ui';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const exerciseFilters = {
   muscles: '',
@@ -25,7 +27,20 @@ searchInput.addEventListener('change', onSearchChange);
 searchForm.addEventListener('submit', onSearchSubmit);
 
 function onSearchChange(e) {
-  exerciseFilters.keyword = e.target.value;
+  const currentInput = e.target.value;
+  exerciseFilters.keyword = currentInput;
+  if (!currentInput) {
+    showNoResultsMessage();
+  }
+  displayExercises();
+}
+function showNoResultsMessage() {
+  iziToast.info({
+    title: 'Повідомлення',
+    message: 'Нічого не знайдено. Спробуйте ще.',
+    position: 'topCenter',
+    timeout: 3000, // Час показу повідомлення в мілісекундах (3 секунди)
+  });
 }
 
 function onSearchSubmit(e) {
@@ -55,6 +70,10 @@ async function updateExerciseListAndPagination(filter, page = 1) {
     );
     listenClick();
   } catch (error) {
+    iziToast.warning({
+      message: 'Error fetching exercises',
+      position: 'center',
+    });
     console.error('Error fetching exercises:', error);
   }
 }
@@ -96,9 +115,7 @@ filterItems.forEach(item => {
 });
 
 function listenClick() {
-  console.log('listenClick func');
   const items = document.querySelectorAll('.exs-card-item');
-  console.log(items);
   items.forEach(item => item.addEventListener('click', handlerClickExercises));
 }
 
@@ -155,6 +172,7 @@ function displayExercises() {
       renderExerciseList(exercises);
     })
     .catch(error => {
+      showNoResultsMessage();
       console.error('Помилка отримання вправ:', error);
     });
 }
