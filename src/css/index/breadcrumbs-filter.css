@@ -98,7 +98,7 @@
 .breadcrumbs-filter .filter .search-form {
   position: relative;
   width: 100%;
-  display: flex;
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -127,7 +127,7 @@
 .breadcrumbs-filter .filter-search::-webkit-input-placeholder {
   color: var(--color-primary-100);
   font-size: var(--font-size-small);
-  font-weight:var(--font-weight-normal);
+  font-weight: var(--font-weight-normal);
   line-height: 20px;
   letter-spacing: 0;
   background-color: var(--color-secondary-100);
