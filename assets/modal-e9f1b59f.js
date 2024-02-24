@@ -10,7 +10,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
     <div class='exercises-modal-right'>
       <button class='exercises-modal-close modal-closed-btn'>
             <svg width='24' height='24'>
-                <use href='/img/icons.svg#icon-close-x'></use>
+                <use href='./img/icons.svg#icon-close-x'></use>
             </svg>
       </button>
 
@@ -32,7 +32,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -48,7 +48,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -64,7 +64,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -80,7 +80,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -96,7 +96,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
         </fieldset>
@@ -147,7 +147,7 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-heart'></use>
+            <use href='./img/icons.svg#icon-heart'></use>
           </svg>
         </button>
 <!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
@@ -236,4 +236,4 @@ var O=Object.defineProperty;var B=(t,e,s)=>e in t?O(t,e,{enumerable:!0,configura
           >
     <use href="/img/icons.svg#icon-trash"></use>
   </svg>`}function w(){p.classList.add("hidden"),h.classList.add("hidden"),document.body.style.paddingRight="0px",document.body.style.overflow="auto"}h.addEventListener("click",function(t){t.target===h&&w()});document.addEventListener("keydown",function(t){t.key==="Escape"&&!p.classList.contains("hidden")&&w()});export{y as E,R as a,Y as e,g as f};
-//# sourceMappingURL=modal-51bd5034.js.map
+//# sourceMappingURL=modal-e9f1b59f.js.map
