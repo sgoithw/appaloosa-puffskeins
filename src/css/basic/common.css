@@ -57,6 +57,7 @@
 body {
   font-family: var(--font-family), sans-serif;
   color: var(--color-primary-100);
+  max-width: 1900px;
   background-color: var(--color-secondary-100);
 }
 
