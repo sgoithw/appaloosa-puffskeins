@@ -162,7 +162,7 @@ var B=Object.defineProperty;var H=(s,e,t)=>e in s?B(s,e,{enumerable:!0,configura
         <div class='rating'>
         <span class='rating-value'>${i.rating}</span>
         <svg class='rating-icon' width='18' height='18'>
-        <use href='${o}#icon-Star'></use>
+        <use href='${o}#icon-star'></use>
         </svg>
         </div>`),`
       <li class='exercise' data-exercise-id='${i._id}'>
@@ -250,4 +250,4 @@ var B=Object.defineProperty;var H=(s,e,t)=>e in s?B(s,e,{enumerable:!0,configura
           >
     <use href='${o}#icon-trash'></use>
   </svg>`}function $(){x.classList.add("hidden"),v.classList.add("hidden"),document.body.style.paddingRight="0px",document.body.style.overflow="auto"}v.addEventListener("click",function(s){s.target===v&&$()});document.addEventListener("keydown",function(s){s.key==="Escape"&&!x.classList.contains("hidden")&&$()});const M={quoteTextEl:document.querySelector(".quote-text"),quoteAuthorEl:document.querySelector(".quote-author")},j=new Date().toDateString(),ee=localStorage.getItem("quoteDate");te();function te(){j!==ee?se():re()}function se(){F.quotes().then(s=>{A(s.quote,s.author),ie(s.quote,s.author,j)})}function A(s,e){M.quoteTextEl.innerHTML=`${s}`,M.quoteAuthorEl.innerHTML=`${e}`}function ie(s,e,t){localStorage.setItem("quoteText",s),localStorage.setItem("quoteAuthor",e),localStorage.setItem("quoteDate",t)}function re(){const s=localStorage.getItem("quoteText"),e=localStorage.getItem("quoteAuthor");A(s,e)}export{w as E,F as a,ne as e,m as f};
-//# sourceMappingURL=dayquote-eddfe84b.js.map
+//# sourceMappingURL=dayquote-d3e3438f.js.map
