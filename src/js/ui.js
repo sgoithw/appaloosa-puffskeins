@@ -329,14 +329,14 @@ export class ExerciseUI {
           <li class='exs-pagination-item circle'>
             <a class='exs-pagination-link ' data-page='1'>
               <svg class='icon-pagination-arrow' width='32' height='32'>
-                <use href='./img/icons.svg#icon-double-arrow-left'></use>
+                <use href='${icons}#icon-double-arrow-left'></use>
               </svg>
             </a>
           </li>
           <li class='exs-pagination-item circle'>
             <a class='exs-pagination-link ' data-page='${page - 1} '>
               <svg class='icon-pagination-arrow' width='20' height='20'>
-                <use href='./img/icons.svg#icon-fi-rr-angle-small-left'></use>
+                <use href='${icons}#icon-fi-rr-angle-small-left'></use>
               </svg>
             </a>
           </li>`;
@@ -357,14 +357,14 @@ export class ExerciseUI {
           <li class='exs-pagination-item circle'>
           <a class='exs-pagination-link ' data-page='${page + 1} '>
             <svg class='icon-pagination-arrow' width='20' height='20'>
-              <use href='./img/icons.svg#icon-fi-rr-angle-small-right'></use>
+              <use href='${icons}#icon-fi-rr-angle-small-right'></use>
             </svg>
             </a>
         </li>
         <li class='exs-pagination-item circle'>
           <a class='exs-pagination-link ' data-page='${totalPages}'>
             <svg class='icon-pagination-arrow' width='32' height='32'>
-              <use href='./img/icons.svg#icon-double-arrow-right'></use>
+              <use href='${icons}#icon-double-arrow-right'></use>
             </svg>
           </a>
         </li>`;

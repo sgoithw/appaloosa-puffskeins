@@ -1,6 +1,7 @@
 import { api } from './api';
 import { favouritesManager } from './favouritesManager.js';
 import { popupUI } from './ui.js';
+import icons from "../img/icons.svg";
 
 let isFavorite = false;
 let idFavorite;
@@ -111,7 +112,7 @@ function createAddToFavoritesMarkup() {
             height="20"
             viewBox="0 0 32 32"
           >
-    <use href="/img/icons.svg#icon-heart"></use>
+    <use href="${icons}#icon-heart"></use>
     </svg>`;
 }
 
@@ -124,7 +125,7 @@ function createRemoveFromFavoritesMarkup() {
             height="20"
             viewBox="0 0 32 32"
           >
-    <use href="/img/icons.svg#icon-trash"></use>
+    <use href="${icons}#icon-trash"></use>
   </svg>`;
 }
 
