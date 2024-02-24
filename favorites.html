@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Your Energy - favorites content" />
-    <link rel="shortcut icon" href="/appaloosa-puffskeins/assets/favicon-33534ce8.svg" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favorites</title>
-    
-    
-    <link rel="stylesheet" href="/appaloosa-puffskeins/assets/favorites-e3b0c442.css">
-    <link rel="stylesheet" href="/appaloosa-puffskeins/assets/styles-8196ceca.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Your Energy - favorites content" />
+  <link rel="shortcut icon" href="/appaloosa-puffskeins/assets/favicon-33534ce8.svg" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorites</title>
+  
+  
+  <script type="module" crossorigin src="/appaloosa-puffskeins/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/appaloosa-puffskeins/assets/modal-e305b9a2.js">
+  <link rel="stylesheet" href="/appaloosa-puffskeins/assets/modal-72d011b1.css">
+  <link rel="stylesheet" href="/appaloosa-puffskeins/assets/favorites-7464536e.css">
+</head>
+
+<body>
+  <header>
     <div class="header" id="header-id">
     <div class="header-container container">
         <div class="decor-theme">
@@ -64,7 +69,7 @@
 </div>
 <div class="header-menu js-menu-container" id="mobile-menu">
     <div class="mobile_menu">
-        
+
         <button type="button" class="menu-closed-btn menu-toggle js-close-menu" aria-expanded="false"
             aria-controls="mobile-menu" aria-label="menu-button">
             <svg width="32" height="32">
@@ -74,10 +79,10 @@
     </div>
     <div class="header-mob-wrap">
         <ul class="header-mob-wrap-pages">
-            <li class="mob-wrap-item mob-wrap-item-active">
+            <li class="mob-wrap-item">
                 <a class="mob-wrap-pages" href="./index.html">Home</a>
             </li>
-            <li class="mob-wrap-item">
+            <li class="mob-wrap-item mob-wrap-item-active">
                 <a class="mob-wrap-pages" href="./favorites.html">Favorites</a>
             </li>
         </ul>
@@ -109,270 +114,78 @@
         </ul>
     </div>
 </div>
-    <main>
-      <section class="favorites">
+  </header>
+
+  <main>
+    <section class="favorites">
   <div class="container">
     <h1 class="favorites-title">Favorites</h1>
     <div class="favorites-wrapper">
-      <div class="favorites-sidebar">
-        <div class="cards-quote-container">
-            <div class="cards-container">
-                <ul class="exercises-cards-list">
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Abductors</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Abs</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Adductors</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Biceps</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Calves</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Cardiovascular System </h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Delts</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Forearms</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Glutes</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="exs-pagination">
-                    <li class="exs-pagination-item active">1</li>
-                    <li class="exs-pagination-item">2</li>
-                </ul>
+      <div class="cards-quote-container favor">
+        <div class="quote-block favor">
+          <div class="quote-container favor">
+            <div class="quote favor">
+              <div class="icon-container-running-men">
+                <svg class="icon-running-men" width="20" height="20">
+                  <use href="/appaloosa-puffskeins/assets/icons-ff4921fd.svg#icon-running-stick-figure-svgrepo-com-1"></use>
+                </svg>
+              </div>
+              <h2 class="quote-title">Quote of the day</h2>
+              <svg class="icon-quote" width="20" height="20">
+                <use href="/appaloosa-puffskeins/assets/icons-ff4921fd.svg#icon-inverted-commas"></use>
+              </svg>
+              <p class="quote-text">A lot of times I find that people who are blessed with the most talent
+                don't
+                ever
+                develop that attitude, and the ones who aren't blessed in that way are the most competitive
+                and
+                have
+                the biggest heart.</p>
+              <p class="quote-author">Tom Brady</p>
             </div>
-            <div class="quote-block">
-                <div class="quote-container">
-                    <div class="quote">
-                        <div class="icon-container-running-men">
-                            <svg class="icon-running-men" width="20" height="20">
-                                <use href="../../img/icons.svg#icon-running-stick-figure-svgrepo-com-1"></use>
-                            </svg>
-                        </div>
-                        <h2 class="quote-title">Quote of the day</h2>
-                        <svg class="icon-quote" width="20" height="20">
-                            <use href="../../img/icons.svg#icon-inverted-commas"></use>
+            <div class="favor-block-desktop">
+              <div class="news-block favor ">
+                <svg class="icon-fluent-food favor" width="20" height="20">
+                  <use href="/appaloosa-puffskeins/assets/icons-ff4921fd.svg#icon-fluent_food-24-filled"></use>
+                </svg>
 
-                        </svg>
-                        <p class="quote-text">A lot of times I find that people who are blessed with the most talent
-                            don't
-                            ever
-                            develop that attitude, and the ones who aren't blessed in that way are the most competitive
-                            and
-                            have
-                            the biggest heart.</p>
-                        <p class="quote-author">Tom Brady</p>
-                    </div>
-                    <div class="quote-block-image">
-                        <img src="../../img/Favorites.x1.jpg" alt="quote-block-image">
-                    </div>
-                </div>
-
-                <div class="news-block">
-                    <div class="icon-container-fluent-food">
-                        <svg class="icon-fluent-food" width="20" height="20">
-                            <use href="../../img/icons.svg#icon-fluent_food-24-filled"></use>
-                        </svg>
-                    </div>
-                    <h2 class="news-label">110 min</h2>
-                    <p class="news-description">Daily norm of sports</p>
-                    <p class="news-text">The World Health Organization recommends at least 150 minutes of
-                        moderate-intensity
-                        aerobic physical activity throughout the week for adults aged 18-64. However, what happens if we
-                        adjust that number to 110 minutes every day? While it might seem like a high number to hit,
-                        dedicating 110 minutes daily to sporting activities may offer unparalleled benefits to physical
-                        health, mental well-being, and overall quality of life.</p>
-                </div>
+                <h2 class="news-label favor">110 min</h2>
+                <p class="news-description favor">Daily norm of sports</p>
+              </div>
+              <div class="quote-block-image favor">
+                <img src="/appaloosa-puffskeins/assets/women-sportswear-working-out-outdoor-43255ba6.jpg" alt="quote-block-image">
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
       </div>
+      <div class="fav-list-wrapper ">
+        <ul class="fav-list fav-list-mob exercises-cards-list">
 
-      <div class="fav-list-wrapper">
-    <ul class="fav-list fav-list-mob"></ul>
-    <ul class="fav-list fav-list-desk"></ul>
-    <p class="fav-no-cards">
-      It appears that you haven't added any exercises to your favorites yet. To
-      get started, you can add exercises that you like to your favorites for
-      easier access in the future.
-    </p>
+
+
+        </ul>
+        <!-- <ul class="fav-list fav-list-desk"></ul> -->
+        <p class="fav-no-cards ">
+          It appears that you haven't added any exercises to your favorites yet. To
+          get started, you can add exercises that you like to your favorites for
+          easier access in the future.
+        </p>
+      </div>
+    </div>
   </div>
+
+  <ul class="exs-pagination"></ul>
+  </div>
+</section>
+    <div class="overlay exercises-popup hidden" id="exercises-popup">
   
-    </div>
+</div>
 
-    <section class="pagination pagination-desk-hide">
-      <div class="pag js-pag"></div>
-    </section>
-  </div>
-</section>
+  </main>
+<!--  <script type="module" src="./js/main.js"></script>-->
+  
 
-      <div class="cards-quote-container">
-            <div class="cards-container">
-                <ul class="exercises-cards-list">
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Abductors</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
+</body>
 
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Abs</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Adductors</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Biceps</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Calves</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Cardiovascular System </h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Delts</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Forearms</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                    <li class="exs-card-item">
-                        <img class="exs-card-img" src="../../img/1.png" alt="image-1" />
-                        <div class="exs-card-container">
-                            <h3 class="exs-card-title">Glutes</h3>
-                            <p class="exs-card-description">Muscles</p>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="exs-pagination">
-                    <li class="exs-pagination-item active">1</li>
-                    <li class="exs-pagination-item">2</li>
-                </ul>
-            </div>
-            <div class="quote-block">
-                <div class="quote-container">
-                    <div class="quote">
-                        <div class="icon-container-running-men">
-                            <svg class="icon-running-men" width="20" height="20">
-                                <use href="../../img/icons.svg#icon-running-stick-figure-svgrepo-com-1"></use>
-                            </svg>
-                        </div>
-                        <h2 class="quote-title">Quote of the day</h2>
-                        <svg class="icon-quote" width="20" height="20">
-                            <use href="../../img/icons.svg#icon-inverted-commas"></use>
-
-                        </svg>
-                        <p class="quote-text">A lot of times I find that people who are blessed with the most talent
-                            don't
-                            ever
-                            develop that attitude, and the ones who aren't blessed in that way are the most competitive
-                            and
-                            have
-                            the biggest heart.</p>
-                        <p class="quote-author">Tom Brady</p>
-                    </div>
-                    <div class="quote-block-image">
-                        <img src="../../img/Favorites.x1.jpg" alt="quote-block-image">
-                    </div>
-                </div>
-
-                <div class="news-block">
-                    <div class="icon-container-fluent-food">
-                        <svg class="icon-fluent-food" width="20" height="20">
-                            <use href="../../img/icons.svg#icon-fluent_food-24-filled"></use>
-                        </svg>
-                    </div>
-                    <h2 class="news-label">110 min</h2>
-                    <p class="news-description">Daily norm of sports</p>
-                    <p class="news-text">The World Health Organization recommends at least 150 minutes of
-                        moderate-intensity
-                        aerobic physical activity throughout the week for adults aged 18-64. However, what happens if we
-                        adjust that number to 110 minutes every day? While it might seem like a high number to hit,
-                        dedicating 110 minutes daily to sporting activities may offer unparalleled benefits to physical
-                        health, mental well-being, and overall quality of life.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    </main>
-  </body>
 </html>
