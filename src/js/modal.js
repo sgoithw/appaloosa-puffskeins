@@ -13,17 +13,17 @@ const listItem = document.querySelector('.exercises-cards-list');
 listItem.addEventListener('click', onExercisesCardClick);
 
 async function onExercisesCardClick(event) {
-  //if (!event.target.closest('.card__btn')) {
-  //return;
-  //}
+  if (!event.target.closest('.card__btn')) {
+    return;
+  }
 
   try {
-    //const exerciseID = event.target
-    //  .closest('.card__btn')
-    //  .getAttribute('data-id');
+    const exerciseID = event.target
+      .closest('.card__btn')
+      .getAttribute('data-id');
 
     // dummy ID
-    const exerciseID = '64f389465ae26083f39b17a2';
+    // const exerciseID = '64f389465ae26083f39b17a2';
 
     const exerciseData = await api.getExerciseById(exerciseID);
    // console.log(exerciseData);
