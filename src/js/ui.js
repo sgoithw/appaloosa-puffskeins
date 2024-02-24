@@ -181,7 +181,7 @@ class PopupUI {
   }
 }
 
-class ExerciseUI {
+export class ExerciseUI {
   /**
    * * Type of exercise card.
    * Different features may be added to a card with different type.
