@@ -344,7 +344,7 @@
   display: block;
   margin-top: 20px;
   border-radius: 20px;
-  width: 100;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
