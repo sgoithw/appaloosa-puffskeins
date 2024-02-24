@@ -4,6 +4,7 @@ import { popupUI } from './ui.js';
 
 let isFavorite = false;
 let idFavorite;
+let currentExercise = null;
 
 const modalExercises = document.querySelector('.exercises-popup');
 const overlay = document.querySelector('.overlay');
@@ -26,6 +27,7 @@ async function onExercisesCardClick(event) {
     // const exerciseID = '64f389465ae26083f39b17a2';
 
     const exerciseData = await api.getExerciseById(exerciseID);
+    currentExercise = exerciseData;
    // console.log(exerciseData);
     idFavorite = exerciseID;
 
@@ -67,16 +69,14 @@ function toggleFavorites(exerciseData) {
   isFavorite = favouritesManager.isFavorite(exerciseData._id);
 
   if (isFavorite) {
-    favouritesManager.removeExerciseFromFavorites(exerciseData._id);
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
   } else {
-    favouritesManager.addExerciseToFavorites(exerciseData);
     btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
   }
 }
 
 function toggleBtn() {
-  isFavorite = !isFavorite;
+  isFavorite = !favouritesManager.isFavorite(currentExercise._id);
   const btnModalFavorites = document.querySelector(
     '.exercises-modal-favorite-btn'
   );
@@ -85,18 +85,20 @@ function toggleBtn() {
 
   if (isFavorite) {
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
-    localFavorite == null
-      ? console.log('')
-      : setTimeout(() => {
-          createMarkupFavorite();
-        }, 100);
+    favouritesManager.addExerciseToFavorites(currentExercise);
+    // localFavorite == null
+    //   ? console.log('')
+    //   : setTimeout(() => {
+    //       createMarkupFavorite();
+    //     }, 100);
   } else {
     btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
-    localFavorite == null
-      ? console.log('')
-      : setTimeout(() => {
-          createMarkupFavorite();
-        }, 100);
+    favouritesManager.removeExerciseFromFavorites(currentExercise._id);
+    // localFavorite == null
+    //   ? console.log('')
+    //   : setTimeout(() => {
+    //       createMarkupFavorite();
+    //     }, 100);
   }
 }
 
