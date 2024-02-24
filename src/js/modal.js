@@ -234,7 +234,7 @@ function createMarkup({
             <use href="/img/icons.svg#icon-heart"></use>
           </svg>
         </button>
-        <button class="exercises-modal-rating-btn">Give a rating</button>
+<!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
       </div>
   </div>
 `;

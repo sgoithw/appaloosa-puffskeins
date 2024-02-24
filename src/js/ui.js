@@ -209,7 +209,7 @@ export class ExerciseUI {
 
     if (cardType === ExerciseUI.exerciseCardType.FAVORITES) {
       featureMarkup = `
-        <button class='move-to-trash-btn' type='button'>
+        <button class='js-remove move-to-trash-btn' type='button'>
         <svg class='move-to-trash-icon' width='16' height='16'>
               <use href='./../../img/icons.svg#icon-trash'></use>
             </svg>
