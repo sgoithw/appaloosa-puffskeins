@@ -216,7 +216,7 @@ export class ExerciseUI {
       featureMarkup = `
         <button class='js-remove move-to-trash-btn' type='button'>
         <svg class='move-to-trash-icon' width='16' height='16'>
-              <use href='./../../img/icons.svg#icon-trash'></use>
+              <use href='./img/icons.svg#icon-trash'></use>
             </svg>
           </button>`;
     }
@@ -228,7 +228,7 @@ export class ExerciseUI {
         <div class='rating'>
         <span class='rating-value'>${el.rating}</span>
         <svg class='rating-icon' width='18' height='18'>
-        <use href='./../../img/icons.svg#icon-Star'></use>
+        <use href='./img/icons.svg#icon-Star'></use>
         </svg>
         </div>`;
         }
@@ -240,7 +240,7 @@ export class ExerciseUI {
         }' type='button'>
           Start
           <svg class='main-action-arrow-icon' width='16' height='16'>
-            <use href='./../../img/icons.svg#icon-arrow-right'></use>
+            <use href='./img/icons.svg#icon-arrow-right'></use>
           </svg>
         </button>
         <div class='top'>
@@ -249,7 +249,7 @@ export class ExerciseUI {
         </div>
         <div class='title'>
           <svg class='title-icon' width='14' height='16'>
-            <use href='./../../img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
+            <use href='./img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
           <span class='title-text text-clipped'>${
           el.name.charAt(0).toUpperCase() + el.name.slice(1)
@@ -308,7 +308,7 @@ export class ExerciseUI {
         <li class='exs-pagination-item'>
             <a class='exs-pagination-link' data-page='${page - 1} '>
                 <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='../../img/icons.svg#icon-fi-rr-angle-small-left'></use>
+                    <use href='./img/icons.svg#icon-fi-rr-angle-small-left'></use>
                 </svg>
             </a>
         </li>`;
@@ -327,7 +327,7 @@ export class ExerciseUI {
         <li class='exs-pagination-item'>
             <a class='exs-pagination-link' data-page='${page + 1} '>
                 <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='../../img/icons.svg#icon-fi-rr-angle-small-right'></use>
+                    <use href='./img/icons.svg#icon-fi-rr-angle-small-right'></use>
                 </svg>
             </a>
         </li>`;
