@@ -34,7 +34,7 @@ class PopupUI {
     <div class='exercises-modal-right'>
       <button class='exercises-modal-close modal-closed-btn'>
             <svg width='24' height='24'>
-                <use href='/img/icons.svg#icon-close-x'></use>
+                <use href='./img/icons.svg#icon-close-x'></use>
             </svg>
       </button>
 
@@ -56,7 +56,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -72,7 +72,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -88,7 +88,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -104,7 +104,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
           <input
@@ -120,7 +120,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-star'></use>
+            <use href='./img/icons.svg#icon-star'></use>
           </svg>
           </label>
         </fieldset>
@@ -171,7 +171,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='/img/icons.svg#icon-heart'></use>
+            <use href='./img/icons.svg#icon-heart'></use>
           </svg>
         </button>
 <!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
