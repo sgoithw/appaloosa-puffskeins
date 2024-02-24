@@ -235,7 +235,9 @@ export class ExerciseUI {
 
         return `
       <li class='exercise' data-exercise-id='${el._id}'>
-        <button class='main-action-btn' type='button'>
+        <button class='main-action-btn card__btn' data-id='${
+          el._id
+        }' type='button'>
           Start
           <svg class='main-action-arrow-icon' width='16' height='16'>
             <use href='./../../img/icons.svg#icon-arrow-right'></use>
@@ -292,6 +294,13 @@ export class ExerciseUI {
 
   getPaginationHTML(totalPages, page = 1, perPage = 9) {
     let paginationHTML = '';
+    let toNumber = e => {
+      e = parseInt(e);
+      return isNaN(e) ? 0 : e;
+    };
+    totalPages = toNumber(totalPages);
+    page = toNumber(page);
+    perPage = toNumber(perPage);
     const paginationData = this.#makePaginationData(totalPages, page, perPage);
 
     if (page > 1) {
@@ -307,7 +316,7 @@ export class ExerciseUI {
 
     paginationData.pages.forEach(page => {
       paginationHTML += `<li class='exs-pagination-item ${
-        paginationData.page === page ? 'active' : ''
+        paginationData.page == page ? 'active' : ''
       }'><a class='exs-pagination-link' ${
         page !== '...' ? `data-page="${page}"` : ''
       }>${page}</a></li>`;
