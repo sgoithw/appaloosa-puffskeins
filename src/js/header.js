@@ -58,7 +58,7 @@ function buildMenu() {
   const currentPageUrl = window.location.pathname;
 
   const menuItems = [
-    { label: 'Home', href: '/', activeOn: '/index.html' },
+    { label: 'Home', href: 'index.html', activeOn: '/index.html' },
     { label: 'Favorites', href: 'favorites.html', activeOn: 'favorites.html' },
   ];
 
