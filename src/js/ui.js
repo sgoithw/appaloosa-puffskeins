@@ -1,3 +1,4 @@
+import icons from '../img/icons.svg';
 /**
  * ...
  */
@@ -9,32 +10,36 @@ class PopupUI {
    * @param exercise
    */
   getExerciseDetailsHTML({
-                           _id,
-                           bodyPart,
-                           equipment,
-                           gifUrl,
-                           name,
-                           target,
-                           description,
-                           rating,
-                           burnedCalories,
-                           time,
-                           popularity,
-                           isFavorite,
-                         }) {
+    _id,
+    bodyPart,
+    equipment,
+    gifUrl,
+    name,
+    target,
+    description,
+    rating,
+    burnedCalories,
+    time,
+    popularity,
+    isFavorite,
+  }) {
     return `
   <div class='exercises-modal' data-id='${_id}'>
   <div class='exercises-container'">
     <div class='exercises-modal-left'>
       <img class='exercises-modal-image'
-      ${gifUrl ? `src=${gifUrl}` : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`}
+      ${
+        gifUrl
+          ? `src=${gifUrl}`
+          : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`
+      }
       alt='exercise for body-part'  />
     </div>
 
     <div class='exercises-modal-right'>
       <button class='exercises-modal-close modal-closed-btn'>
             <svg width='24' height='24'>
-                <use href='./img/icons.svg#icon-close-x'></use>
+                <use href='${icons}#icon-close-x'></use>
             </svg>
       </button>
 
@@ -51,12 +56,14 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star1'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 1 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 1 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -67,12 +74,14 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star2'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 2 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 2 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -83,12 +92,14 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star3'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 3 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 3 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -99,12 +110,14 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star4'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 4 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 4 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
           <input
@@ -115,12 +128,14 @@ class PopupUI {
           />
           <label class='exercises-modal-rating-label' for='star5'>
             <svg
-            class='exercises-modal-favorite-icon rating-star ${rating >= 5 ? 'rated' : ''}'
+            class='exercises-modal-favorite-icon rating-star ${
+              rating >= 5 ? 'rated' : ''
+            }'
             width='20'
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-star'></use>
+            <use href='${icons}#icon-star'></use>
           </svg>
           </label>
         </fieldset>
@@ -171,7 +186,7 @@ class PopupUI {
             height='20'
             viewBox='0 0 32 32'
           >
-            <use href='./img/icons.svg#icon-heart'></use>
+            <use href='${icons}#icon-heart'></use>
           </svg>
         </button>
 <!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
@@ -205,7 +220,7 @@ export class ExerciseUI {
   getExerciseListHTML(arr, cardType) {
     if (!ExerciseUI.exerciseCardType[cardType]) {
       console.error(
-        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`,
+        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`
       );
       return '';
     }
@@ -216,7 +231,7 @@ export class ExerciseUI {
       featureMarkup = `
         <button class='js-remove move-to-trash-btn' type='button'>
         <svg class='move-to-trash-icon' width='16' height='16'>
-              <use href='./img/icons.svg#icon-trash'></use>
+              <use href='${icons}#icon-trash'></use>
             </svg>
           </button>`;
     }
@@ -228,7 +243,7 @@ export class ExerciseUI {
         <div class='rating'>
         <span class='rating-value'>${el.rating}</span>
         <svg class='rating-icon' width='18' height='18'>
-        <use href='./img/icons.svg#icon-Star'></use>
+        <use href='${icons}#icon-star'></use>
         </svg>
         </div>`;
         }
@@ -240,7 +255,7 @@ export class ExerciseUI {
         }' type='button'>
           Start
           <svg class='main-action-arrow-icon' width='16' height='16'>
-            <use href='./img/icons.svg#icon-arrow-right'></use>
+            <use href='${icons}#icon-arrow-right'></use>
           </svg>
         </button>
         <div class='top'>
@@ -249,11 +264,11 @@ export class ExerciseUI {
         </div>
         <div class='title'>
           <svg class='title-icon' width='14' height='16'>
-            <use href='./img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
+            <use href='${icons}#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
           <span class='title-text text-clipped'>${
-          el.name.charAt(0).toUpperCase() + el.name.slice(1)
-        }</span>
+            el.name.charAt(0).toUpperCase() + el.name.slice(1)
+          }</span>
         </div>
         <div class='details'>
           <div class='detail'>
@@ -277,7 +292,6 @@ export class ExerciseUI {
   }
 
   getExerciseCategoryListHTML(exercises) {
-    console.log(exercises);
     return exercises
       .map(
         ({ filter, name, imgURL }) => `
@@ -287,13 +301,17 @@ export class ExerciseUI {
                           <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
-                  </li>`,
+                  </li>`
       )
       .join('');
   }
 
   getPaginationHTML(totalPages, page = 1, perPage = 9) {
     let paginationHTML = '';
+    if (totalPages < 1) {
+      return paginationHTML;
+    }
+
     let toNumber = e => {
       e = parseInt(e);
       return isNaN(e) ? 0 : e;
@@ -303,15 +321,25 @@ export class ExerciseUI {
     perPage = toNumber(perPage);
     const paginationData = this.#makePaginationData(totalPages, page, perPage);
 
-    if (page > 1) {
-      paginationHTML += `
-        <li class='exs-pagination-item'>
-            <a class='exs-pagination-link' data-page='${page - 1} '>
-                <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='./img/icons.svg#icon-fi-rr-angle-small-left'></use>
-                </svg>
+
+    if (totalPages > 5) {
+      if (page > 1) {
+        paginationHTML += `
+          <li class='exs-pagination-item circle'>
+            <a class='exs-pagination-link ' data-page='1'>
+              <svg class='icon-pagination-arrow' width='32' height='32'>
+                <use href='${icons}#icon-double-arrow-left'></use>
+              </svg>
             </a>
-        </li>`;
+          </li>
+          <li class='exs-pagination-item circle'>
+            <a class='exs-pagination-link ' data-page='${page - 1} '>
+              <svg class='icon-pagination-arrow' width='20' height='20'>
+                <use href='${icons}#icon-fi-rr-angle-small-left'></use>
+              </svg>
+            </a>
+          </li>`;
+      }
     }
 
     paginationData.pages.forEach(page => {
@@ -322,15 +350,24 @@ export class ExerciseUI {
       }>${page}</a></li>`;
     });
 
-    if (page < totalPages) {
-      paginationHTML += `
-        <li class='exs-pagination-item'>
-            <a class='exs-pagination-link' data-page='${page + 1} '>
-                <svg class='icon-pagination-arrow' width='20' height='20'>
-                    <use href='./img/icons.svg#icon-fi-rr-angle-small-right'></use>
-                </svg>
+    if (totalPages > 5) {
+      if (page < totalPages) {
+        paginationHTML += `
+          <li class='exs-pagination-item circle'>
+          <a class='exs-pagination-link ' data-page='${page + 1} '>
+            <svg class='icon-pagination-arrow' width='20' height='20'>
+              <use href='${icons}#icon-fi-rr-angle-small-right'></use>
+            </svg>
             </a>
+        </li>
+        <li class='exs-pagination-item circle'>
+          <a class='exs-pagination-link ' data-page='${totalPages}'>
+            <svg class='icon-pagination-arrow' width='32' height='32'>
+              <use href='${icons}#icon-double-arrow-right'></use>
+            </svg>
+          </a>
         </li>`;
+      }
     }
     return paginationHTML;
   }

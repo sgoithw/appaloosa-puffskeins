@@ -45,10 +45,6 @@ function handleSaveToFavorites() {
     .catch(e => console.error(e));
 
 }
-
-/**
- * ...
- */
 function handleShowPopup(e) {
 
   if (!this.dataset.startExercise) {

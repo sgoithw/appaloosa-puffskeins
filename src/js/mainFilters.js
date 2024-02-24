@@ -96,9 +96,7 @@ filterItems.forEach(item => {
 });
 
 function listenClick() {
-  console.log('listenClick func');
   const items = document.querySelectorAll('.exs-card-item');
-  console.log(items);
   items.forEach(item => item.addEventListener('click', handlerClickExercises));
 }
 

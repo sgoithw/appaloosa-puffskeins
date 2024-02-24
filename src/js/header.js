@@ -54,4 +54,46 @@ function setupMobileMenu() {
   });
 }
 
+function buildMenu() {
+  const currentPageUrl = window.location.pathname;
+
+  const menuItems = [
+    { label: 'Home', href: '/', activeOn: '/index.html' },
+    { label: 'Favorites', href: 'favorites.html', activeOn: 'favorites.html' },
+  ];
+
+  const menu = document.createElement('ul');
+  menu.classList.add('header-pages');
+
+  for (const item of menuItems) {
+    const listItem = document.createElement('li');
+    listItem.classList.add('header-pages-item');
+
+    if (
+      currentPageUrl === item.activeOn ||
+      currentPageUrl === item.href ||
+      currentPageUrl.endsWith(item.activeOn)
+    ) {
+      listItem.classList.add('header-pages-active');
+      listItem.textContent = item.label;
+    } else {
+      listItem.classList.add('header-inactive');
+      const link = document.createElement('a');
+      link.classList.add('header-item-link');
+      link.href = item.href;
+      link.textContent = item.label;
+      listItem.appendChild(link);
+    }
+
+    menu.appendChild(listItem);
+  }
+
+  // document.querySelector('#header-pages').appendChild(menu);
+
+  let element = document.querySelector('#header-pages');
+  element.replaceChild(menu, element.querySelectorAll('ul')[0]);
+  element = document.querySelector('#header-pages');
+}
+
+window.onload = buildMenu;
 setupMobileMenu();
