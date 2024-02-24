@@ -13,6 +13,7 @@ export default defineConfig(({ command }) => {
       host: true,
       port: 8080,
     },
+    assetsInclude: ['**/*.svg'],
     build: {
       sourcemap: true,
 
