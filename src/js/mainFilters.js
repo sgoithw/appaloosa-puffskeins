@@ -1,59 +1,160 @@
 import { api } from './api';
-import { exerciseUI } from './ui';
-// Отримуємо дані про вправи з API за замовчуванням для фільтра "Muscles"
-api
-  .filters({ filter: 'Muscles', page: 1, limit: 12 })
-  .then(data => {
-    // Отримуємо масив вправ з результатів запиту
+import { exerciseUI, ExerciseUI } from './ui';
+
+const exerciseFilters = {
+  muscles: '',
+  bodypart: '',
+  equipment: '',
+  keyword: '',
+  page: 1,
+  limit: 10,
+};
+
+const filtersMap = {
+  Muscles: 'muscles',
+  'Body parts': 'bodypart',
+  Equipment: 'equipment',
+};
+
+const exerciseContainer = document.querySelector('.exercises-cards-list');
+const paginationContainer = document.querySelector('.exs-pagination');
+const searchInput = document.querySelector('.filter-search');
+const searchForm = document.querySelector('.search-form');
+
+searchInput.addEventListener('change', onSearchChange);
+searchForm.addEventListener('submit', onSearchSubmit);
+
+function onSearchChange(e) {
+  exerciseFilters.keyword = e.target.value;
+}
+
+function onSearchSubmit(e) {
+  e.preventDefault();
+  displayExercises();
+  searchForm.reset();
+}
+
+let currentFilter = 'Muscles'; // Зберігаємо поточний фільтр
+
+// Функція для оновлення відображення списку вправ та пагінації
+async function updateExerciseListAndPagination(filter, page = 1) {
+  try {
+    // Отримання даних вправ за вказаним фільтром та сторінкою
+    const data = await api.filters({ filter, page, limit: 12 });
     const exercises = data.results;
+    searchForm.style.display = 'none';
+    // Оновлення списку вправ
+    exerciseContainer.innerHTML =
+      exerciseUI.getExerciseCategoryListHTML(exercises);
 
-    // Отримуємо HTML рядок з картками вправ
-    const exercisesHTML = exerciseUI.getExerciseCategoryListHTML(exercises);
-
-    // Додаємо HTML рядок з картками вправ до контейнера на сторінці
-    const exerciseContainer = document.querySelector('.exercises-cards-list');
-    exerciseContainer.innerHTML = exercisesHTML;
-
-    // Отримуємо список елементів фільтрів
-    const filterItems = document.querySelectorAll('.exercises-item');
-
-    // Додаємо обробники подій до кожного елемента фільтра
-    filterItems.forEach(item => {
-      item.addEventListener('click', async function () {
-        // Знімаємо клас 'active' у всіх елементів фільтра
-        filterItems.forEach(item => item.classList.remove('active'));
-
-        // Встановлюємо клас 'active' лише обраному елементу
-        this.classList.add('active');
-
-        // Отримуємо значення фільтру, який був вибрано
-        const selectedFilter = this.textContent;
-
-        try {
-          // Отримуємо дані вправ за обраним фільтром
-          const data = await api.filters({
-            filter: selectedFilter,
-            page: 1,
-            limit: 12,
-          });
-
-          // Отримуємо масив вправ з результатів запиту
-          const exercises = data.results;
-
-          // Отримуємо HTML рядок з картками вправ
-          const exercisesHTML =
-            exerciseUI.getExerciseCategoryListHTML(exercises);
-
-          // Додаємо HTML рядок з картками вправ до контейнера на сторінці
-          exerciseContainer.innerHTML = exercisesHTML;
-        } catch (error) {
-          // Обробляємо помилки, якщо вони виникли під час отримання даних з API
-          console.error('Error fetching exercises:', error);
-        }
-      });
-    });
-  })
-  .catch(error => {
-    // Обробляємо помилки, якщо вони виникли під час отримання даних з API
+    // Оновлення пагінації
+    const totalPages = data.totalPages;
+    paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
+      totalPages,
+      page
+    );
+    listenClick();
+  } catch (error) {
     console.error('Error fetching exercises:', error);
+  }
+}
+
+// Завантаження списку вправ та пагінації за замовчуванням ("Muscles", сторінка 1)
+updateExerciseListAndPagination(currentFilter);
+
+function onExercisePageClick(event) {
+  if (event.target.tagName === 'A') {
+    const nextPage = parseInt(event.target.dataset.page);
+    if (!isNaN(nextPage)) {
+      const activeItem = document.querySelector('.exs-pagination-item.active');
+      const currentPage = parseInt(activeItem.textContent);
+      if (currentPage !== nextPage) {
+        // Оновлення списку вправ та пагінації для нової сторінки
+        updateExerciseListAndPagination(currentFilter, nextPage);
+
+        // Позначення активного елемента пагінації
+        activeItem.classList.remove('active');
+        event.target.parentElement.classList.add('active');
+      }
+    }
+  }
+}
+
+// Додаємо обробник подій для пагінації
+paginationContainer.addEventListener('click', onExercisePageClick);
+
+// Додаємо обробники подій для фільтрів
+const filterItems = document.querySelectorAll('.exercises-item');
+filterItems.forEach(item => {
+  item.addEventListener('click', function () {
+    filterItems.forEach(item => item.classList.remove('active'));
+    this.classList.add('active');
+    currentFilter = this.textContent; // Оновлюємо поточний фільтр
+    // Скидання сторінки на першу при зміні фільтра
+    updateExerciseListAndPagination(currentFilter);
   });
+});
+
+function listenClick() {
+  console.log('listenClick func');
+  const items = document.querySelectorAll('.exs-card-item');
+  console.log(items);
+  items.forEach(item => item.addEventListener('click', handlerClickExercises));
+}
+
+function handlerClickExercises(e) {
+  exerciseFilters.muscles = '';
+  exerciseFilters.bodypart = '';
+  exerciseFilters.equipment = '';
+  exerciseFilters[filtersMap[currentFilter]] = e.currentTarget.dataset.name;
+  displayExercises();
+}
+
+// Функція для відмальовування списку вправ у HTML
+function renderExerciseList(exercises) {
+  const exerciseListElement = document.querySelector('.exercises-cards-list');
+
+  // Очистка списку перед додаванням нових елементів
+  exerciseListElement.innerHTML = '';
+
+  // Отримання типу вправ для визначення особливостей карти вправ
+  const cardType = ExerciseUI.exerciseCardType.HOME;
+
+  // Отримання HTML-представлення списку вправ з класу ExerciseUI
+  const exerciseListHTML = exerciseUI.getExerciseListHTML(
+    exercises.results,
+    cardType
+  );
+
+  // Додавання HTML-представлення вправ до списку на сторінці
+  exerciseListElement.innerHTML = exerciseListHTML;
+  paginationContainer.removeEventListener('click', onExercisePageClick);
+  const paginationLinks = document.querySelectorAll('.exs-pagination-link');
+  paginationLinks.forEach(link => link.addEventListener('click', onPageClick));
+  searchForm.style.display = 'flex';
+}
+
+function onPageClick(e) {
+  e.preventDefault();
+  exerciseFilters.page = e.currentTarget.dataset.page;
+  displayExercises();
+}
+
+// Отримання вправ з API та відображення їх на сторінці
+function displayExercises() {
+  // Отримання вправ з API
+  api
+    .exercises(exerciseFilters)
+    .then(exercises => {
+      // Відображення вправ на сторінці
+      paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
+        exercises.totalPages,
+        exerciseFilters.page,
+        exerciseFilters.limit
+      );
+      renderExerciseList(exercises);
+    })
+    .catch(error => {
+      console.error('Помилка отримання вправ:', error);
+    });
+}
