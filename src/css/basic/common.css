@@ -2,6 +2,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   background-color: var(--color-secondary-100);
   color: var(--color-primary-100);
+  max-width: 1900px;
 }
 
 .visually-hidden {
