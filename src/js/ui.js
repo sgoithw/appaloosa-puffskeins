@@ -243,7 +243,7 @@ export class ExerciseUI {
         <div class='rating'>
         <span class='rating-value'>${el.rating}</span>
         <svg class='rating-icon' width='18' height='18'>
-        <use href='${icons}#icon-Star'></use>
+        <use href='${icons}#icon-star'></use>
         </svg>
         </div>`;
         }
