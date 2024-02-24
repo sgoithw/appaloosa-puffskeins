@@ -169,6 +169,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -199,7 +200,22 @@
   border: 1px solid;
   border-radius: 50%;
 }
+.exs-pagination-item.circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 
+  border: 1px solid var(--color-grey-notselected);
+}
+.exs-pagination-link{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exs-pagination-item.circle:hover {
+  border: 1px solid var(--color-primary-100);
+}
 .icon-pagination-arrow {
   fill: var(--color-grey-notselected);
 }

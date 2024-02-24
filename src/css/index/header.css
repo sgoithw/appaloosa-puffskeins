@@ -27,6 +27,9 @@ body.dark_mode .header-logo-img {
 .header-pages {
   display: none;
 }
+.header-pages-item {
+  padding: 6px 12px;
+}
 .header-social {
   display: none;
 }

@@ -2,6 +2,7 @@ import { favouritesManager } from './favouritesManager';
 import { exerciseUI, ExerciseUI } from './ui';
 import './header.js';
 import './modal.js';
+import './dayquote.js';
 
 const exercisesContainer = document.querySelector(
   '.favorites .exercises-cards-list'
