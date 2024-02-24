@@ -465,6 +465,44 @@
     flex-direction: column;
   }
 
+  .favorites .cards-container {
+    
+  }
+
+  .favorites .exercises-cards-list {
+    min-width: 924;
+    max-height: 487px;
+    padding-right: 24px;
+    overflow: auto;
+  }
+
+  /* SCROLLBAR FOR EXERCISES STYLES - BEGIN */
+
+  /* width */
+  .favorites .exercises-cards-list::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 12px;
+  }
+
+  /* Track */
+  .favorites .exercises-cards-list::-webkit-scrollbar-track {
+    background: var(--color-primary-10);
+    border-radius: 12px;
+  }
+
+  /* Handle */
+  .favorites .exercises-cards-list::-webkit-scrollbar-thumb {
+    background: var(--color-primary-100);
+    border-radius: 12px;
+  }
+
+  /* Handle on hover */
+  .favorites .exercises-cards-list::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  /* SCROLLBAR FOR EXERCISES STYLES - END */
+
   .quote-container {
     gap: 32px;
   }
