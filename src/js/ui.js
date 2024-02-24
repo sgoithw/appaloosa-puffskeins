@@ -292,7 +292,6 @@ export class ExerciseUI {
   }
 
   getExerciseCategoryListHTML(exercises) {
-    console.log(exercises);
     return exercises
       .map(
         ({ filter, name, imgURL }) => `

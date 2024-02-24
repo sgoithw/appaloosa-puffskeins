@@ -12,11 +12,9 @@ const emptyMessage = document.querySelector('.fav-no-cards');
 
 exercisesContainer.addEventListener('click', ({ target }) => {
   if (target.closest('.js-remove')) {
-    console.log('click');
     const exerciseId = target.closest('.exercise').dataset.exerciseId;
     favouritesManager.removeExerciseFromFavorites(exerciseId);
     renderExercises();
-    console.log(`removed ${exerciseId}}`);
   }
 });
 
