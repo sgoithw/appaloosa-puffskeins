@@ -28,7 +28,6 @@ async function onExercisesCardClick(event) {
 
     const exerciseData = await api.getExerciseById(exerciseID);
     currentExercise = exerciseData;
-   // console.log(exerciseData);
     idFavorite = exerciseID;
 
     const markup = popupUI.getExerciseDetailsHTML(exerciseData);
@@ -43,7 +42,9 @@ async function onExercisesCardClick(event) {
     const btnModalClose = document.querySelector('.modal-closed-btn');
     btnModalClose.addEventListener('click', closeModalExercises);
   } catch (error) {
-    console.log(error);
+    throw new Error(
+      'An error occurred during the download. Please try again later.'
+    );
   }
 }
 

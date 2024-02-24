@@ -465,10 +465,6 @@
     flex-direction: column;
   }
 
-  .favorites .cards-container {
-    
-  }
-
   .favorites .exercises-cards-list {
     min-width: 924;
     max-height: 487px;
@@ -498,7 +494,7 @@
 
   /* Handle on hover */
   .favorites .exercises-cards-list::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
   }
 
   /* SCROLLBAR FOR EXERCISES STYLES - END */
