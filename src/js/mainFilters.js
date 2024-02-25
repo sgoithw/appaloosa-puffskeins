@@ -133,6 +133,7 @@ function handlerClickExercises(e) {
   exerciseFilters.muscles = '';
   exerciseFilters.bodypart = '';
   exerciseFilters.equipment = '';
+  exerciseFilters.keyword = '';
   exerciseFilters.page = 1;
   exerciseFilters[filtersMap[currentFilter]] = e.currentTarget.dataset.name;
   showBreadcrumbs(e.currentTarget.dataset.name);
