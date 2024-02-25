@@ -2,6 +2,7 @@ import { api } from './api';
 import { favouritesManager } from './favouritesManager.js';
 import { popupUI } from './ui.js';
 import icons from '../img/icons.svg';
+import { handleRatingBtn } from './modal-rating.js';
 
 let isFavorite = false;
 let idFavorite;
@@ -40,6 +41,10 @@ async function onExercisesCardClick(event) {
       '.exercises-modal-favorite-btn'
     );
     btnModalFavorites.addEventListener('click', toggleBtn);
+
+    const ratingBtn = document.querySelector('.rating-btn');
+
+    ratingBtn.addEventListener('click', () => handleRatingBtn(exerciseID));
 
     const btnModalClose = document.querySelector('.modal-closed-btn');
     btnModalClose.addEventListener('click', closeModalExercises);
@@ -189,3 +194,15 @@ function closeModalExercises() {
 
   document.removeEventListener('keydown', closeModalExercises);
 }
+
+overlay.addEventListener('click', function (event) {
+  if (event.target === overlay) {
+    closeModalExercises();
+  }
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
+    closeModalExercises();
+  }
+});

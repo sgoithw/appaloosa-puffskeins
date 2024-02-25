@@ -157,7 +157,7 @@ class PopupUI {
         </li>
         <li class='excercises-modal-item'>
           <h4 class='excercises-modal-title'>Burned calories</h4>
-          <p class='excercises-modal-aftertitle js-burned-calories'>${burnedCalories}/${time}</p>
+          <p class='excercises-modal-aftertitle js-burned-calories'>${burnedCalories}/${time} min</p>
         </li>
         <li class='excercises-modal-item'>
           <h4 class='excercises-modal-title'></h4>
@@ -184,7 +184,7 @@ class PopupUI {
             <use href='${icons}#icon-heart'></use>
           </svg>
         </button>
-<!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
+        <button class="exercises-modal-favorite-btn rating-btn">Give a rating</button>
       </div>
   </div>
 `;
