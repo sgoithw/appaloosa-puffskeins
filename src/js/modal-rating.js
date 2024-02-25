@@ -15,14 +15,15 @@ const elements = {
 };
 document.addEventListener('keydown', onEscClick);
 
-export function handleRatingBtn(id) {
+elements.ratingForm.addEventListener('submit', function (event) {
+  handleSaveForm(event, this.id.value);
+});
+
+export function handleRatingBtn() {
   handleShowRatingPopup();
   elements.closeModalBtn.addEventListener('click', handleCloseModal);
   elements.modalRating.addEventListener('click', closeOverlay);
   handleStarClick();
-  elements.ratingForm.addEventListener('submit', function (event) {
-    handleSaveForm(event, id);
-  });
 }
 
 // Add lisneter-click for each star
