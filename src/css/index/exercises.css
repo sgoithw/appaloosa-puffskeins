@@ -162,6 +162,7 @@
 .exs-card-title {
   font-weight: var(--font-weight-normal);
   font-size: 24px;
+  text-transform: capitalize;
 }
 
 .exs-card-description {
