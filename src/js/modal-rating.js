@@ -10,7 +10,7 @@ const elements = {
   openExercisePopup: document.querySelectorAll('[data-start-exercise]'),
   ratingForm: document.querySelector('#rating-form'),
   ratingStars: document.querySelectorAll('.rating-label'),
-  ratingValue: document.querySelector('.rating-value'),
+  ratingValue: document.querySelector('.js-modal-rate'),
   closeModalBtn: document.querySelector('.rating-close-btn'),
 };
 document.addEventListener('keydown', onEscClick);

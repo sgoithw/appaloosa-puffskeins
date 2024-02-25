@@ -26,7 +26,6 @@ breadcrumbs.addEventListener('click', e => e.preventDefault());
 // Відрендерити сторінку з категоріями
 function returnBack(e) {
   e.preventDefault();
-  jsBreadcrumbsTitleLink.innerHTML = `<h2 class='title'>Exercises</h2>`;
   updateExerciseListAndPagination(currentFilter);
 }
 
@@ -61,6 +60,8 @@ async function updateExerciseListAndPagination(filter, page = 1) {
     removeListeners();
     showCategoryPlaceholders();
     breadcrumbs.classList.add('hidden');
+    paginationContainer.innerHTML = '';
+    jsBreadcrumbsTitleLink.innerHTML = `<h2 class='title'>Exercises</h2>`;
     // Отримання даних вправ за вказаним фільтром та сторінкою
     const data = await api.filters({ filter, page, limit: 12 });
     const exercises = data.results;
@@ -74,6 +75,7 @@ async function updateExerciseListAndPagination(filter, page = 1) {
     listenClick();
   } catch (error) {
     showNoResultsMessage();
+    clearPlaceholders();
     console.error('Error fetching exercises:', error);
   }
 }
@@ -178,6 +180,7 @@ function displayExercises() {
   //Показуєм контент плейсхолдери
   removeListeners();
   showCardPlaceholders();
+  paginationContainer.innerHTML = '';
   // Отримання вправ з API
   api
     .exercises(exerciseFilters)
@@ -191,6 +194,7 @@ function displayExercises() {
           timeout: 5000,
           color: 'black',
         });
+        clearPlaceholders();
         return;
       }
       // Відображення вправ на сторінці
@@ -199,6 +203,7 @@ function displayExercises() {
     })
     .catch(error => {
       showNoResultsMessage();
+      clearPlaceholders();
       console.error('Помилка отримання вправ:', error);
     });
 }
@@ -219,6 +224,10 @@ function showCardPlaceholders() {
 
   exerciseContainer.innerHTML = getCardPlaceholderHTML(10);
 
+}
+
+function clearPlaceholders() {
+  exerciseContainer.innerHTML = '';
 }
 
 /**
