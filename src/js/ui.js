@@ -274,11 +274,15 @@ export class ExerciseUI {
           </div>
           <div class='detail'>
             <span class='detail-title'>Body part:</span>
-            <span class='detail-value text-clipped'>${el.bodyPart}</span>
+            <span class='detail-value text-clipped'>
+              ${el.bodyPart.charAt(0).toUpperCase() + el.bodyPart.slice(1)}
+              </span>
           </div>
           <div class='detail'>
             <span class='detail-title'>Target:</span>
-            <span class='detail-value text-clipped'>${el.target}</span>
+            <span class='detail-value text-clipped'>
+              ${el.target.charAt(0).toUpperCase() + el.target.slice(1)}
+            </span>
           </div>
         </div>
       </li>`;
