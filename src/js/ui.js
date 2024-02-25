@@ -261,9 +261,9 @@ export class ExerciseUI {
           <svg class='title-icon' width='14' height='16'>
             <use href='${icons}#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
-          <span class='title-text text-clipped'>${
-            el.name.charAt(0).toUpperCase() + el.name.slice(1)
-          }</span>
+          <span class='title-text text-clipped'>
+            ${el.name.charAt(0).toUpperCase() + el.name.slice(1)}
+          </span>
         </div>
         <div class='details'>
           <div class='detail'>
