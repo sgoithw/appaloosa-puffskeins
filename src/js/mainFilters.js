@@ -15,6 +15,7 @@ const exerciseContainer = document.querySelector('.exercises-cards-list');
 const paginationContainer = document.querySelector('.exs-pagination');
 const searchInput = document.querySelector('.filter-search');
 const searchForm = document.querySelector('.search-form');
+const filterClearIcon = document.querySelector('.filter-clear-icon');
 const jsBreadcrumbsTitleLink = document.querySelector('.js-breadcrumbs-title-link');
 const breadcrumbs = document.querySelector('#breadcrumbs');
 
@@ -22,6 +23,7 @@ searchInput.addEventListener('change', onSearchChange);
 searchForm.addEventListener('submit', onSearchSubmit);
 jsBreadcrumbsTitleLink.addEventListener('click', returnBack);
 breadcrumbs.addEventListener('click', e => e.preventDefault());
+filterClearIcon.addEventListener("click",()=>{searchForm.reset()})
 
 // Відрендерити сторінку з категоріями
 function returnBack(e) {
