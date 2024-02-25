@@ -43,7 +43,7 @@ class PopupUI {
             </svg>
       </button>
 
-      <h3 class='exercises-modal-title'>${name}</h3>
+      <h3 class='exercises-modal-title'>${name.charAt(0).toUpperCase() + name.slice(1)}</h3>
 
       <div class='exercises-modal-rating-container'>
         <span class='exercises-modal-rating-value'>${rating}</span>
@@ -297,7 +297,7 @@ export class ExerciseUI {
               <li class='exs-card-item' data-name='${name}'>
                   <img class='exs-card-img' src='${imgURL}' alt='${name}' />
                       <div class='exs-card-container'>
-                          <h3 class='exs-card-title'>${name.charAt(0).toUpperCase() + name.slice(1)}</h3>
+                          <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
                   </li>`
