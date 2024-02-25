@@ -2,6 +2,7 @@ import { api } from './api';
 import { favouritesManager } from './favouritesManager.js';
 import { popupUI } from './ui.js';
 import icons from '../img/icons.svg';
+import { handleRatingBtn } from './modal-rating.js';
 
 let isFavorite = false;
 let idFavorite;
@@ -9,6 +10,7 @@ let currentExercise = null;
 
 const modalExercises = document.querySelector('.exercises-popup');
 const overlay = document.querySelector('.overlay');
+const ratingForm = document.querySelector('#rating-form');
 
 const listItem = document.querySelector('.exercises-cards-list');
 
@@ -37,15 +39,18 @@ async function onExercisesCardClick(event) {
     openModalExercises();
 
     const btnModalFavorites = document.querySelector(
-      '.exercises-modal-favorite-btn'
+      '.exercises-modal-favorite-btn',
     );
     btnModalFavorites.addEventListener('click', toggleBtn);
+    const ratingBtn = document.querySelector('.rating-btn');
+    ratingForm.id.value = exerciseID;
+    ratingBtn.addEventListener('click', handleRatingBtn);
 
     const btnModalClose = document.querySelector('.modal-closed-btn');
     btnModalClose.addEventListener('click', closeModalExercises);
   } catch (error) {
     throw new Error(
-      'An error occurred during the download. Please try again later.'
+      'An error occurred during the download. Please try again later.',
     );
   }
 }
@@ -58,13 +63,13 @@ function openModalExercises() {
   document.body.style.paddingRight = lockPaddingValue;
   document.body.style.overflow = 'hidden';
 
-  overlay.addEventListener('click', function (event) {
+  overlay.addEventListener('click', function(event) {
     if (event.target === overlay) {
       closeModalExercises();
     }
   });
 
-  document.addEventListener('keydown', function (event) {
+  document.addEventListener('keydown', function(event) {
     if (
       event.key === 'Escape' &&
       !modalExercises.classList.contains('hidden')
@@ -81,7 +86,7 @@ function updateModal(markup, exerciseData) {
 
 function toggleFavorites(exerciseData) {
   const btnModalFavorites = document.querySelector(
-    '.exercises-modal-favorite-btn'
+    '.exercises-modal-favorite-btn',
   );
 
   isFavorite = favouritesManager.isFavorite(exerciseData._id);
@@ -96,7 +101,7 @@ function toggleFavorites(exerciseData) {
 function toggleBtn() {
   isFavorite = !favouritesManager.isFavorite(currentExercise._id);
   const btnModalFavorites = document.querySelector(
-    '.exercises-modal-favorite-btn'
+    '.exercises-modal-favorite-btn',
   );
 
   const localFavorite = document.querySelector('.fav-list');
@@ -124,7 +129,7 @@ function toggleBtn() {
 
 function showExerciseCard(id) {
   const card = [...document.querySelectorAll(`.fav-list .exercise`)].filter(
-    e => e.dataset.exerciseId == id
+    e => e.dataset.exerciseId == id,
   );
   if (!card || card.length === 0) {
     return;
@@ -135,7 +140,7 @@ function showExerciseCard(id) {
 
 function hideExerciseCard(id) {
   const card = [...document.querySelectorAll(`.fav-list .exercise`)].filter(
-    e => e.dataset.exerciseId == id
+    e => e.dataset.exerciseId == id,
   );
 
   if (!card || card.length === 0) {
@@ -181,7 +186,7 @@ function closeModalExercises() {
   btnModalClose.removeEventListener('click', closeModalExercises);
 
   const btnModalFavorites = document.querySelector(
-    '.exercises-modal-favorite-btn'
+    '.exercises-modal-favorite-btn',
   );
   btnModalFavorites.removeEventListener('click', toggleBtn);
 
@@ -189,3 +194,15 @@ function closeModalExercises() {
 
   document.removeEventListener('keydown', closeModalExercises);
 }
+
+overlay.addEventListener('click', function(event) {
+  if (event.target === overlay) {
+    closeModalExercises();
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
+    closeModalExercises();
+  }
+});

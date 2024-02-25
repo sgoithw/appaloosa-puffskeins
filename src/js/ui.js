@@ -157,7 +157,7 @@ class PopupUI {
         </li>
         <li class='excercises-modal-item'>
           <h4 class='excercises-modal-title'>Burned calories</h4>
-          <p class='excercises-modal-aftertitle js-burned-calories'>${burnedCalories}/${time}</p>
+          <p class='excercises-modal-aftertitle js-burned-calories'>${burnedCalories}/${time} min</p>
         </li>
         <li class='excercises-modal-item'>
           <h4 class='excercises-modal-title'></h4>
@@ -184,7 +184,7 @@ class PopupUI {
             <use href='${icons}#icon-heart'></use>
           </svg>
         </button>
-<!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
+        <button class="exercises-modal-favorite-btn rating-btn">Give a rating</button>
       </div>
   </div>
 `;
@@ -261,9 +261,9 @@ export class ExerciseUI {
           <svg class='title-icon' width='14' height='16'>
             <use href='${icons}#icon-running-stick-figure-svgrepo-com-1'></use>
           </svg>
-          <span class='title-text text-clipped'>${
-            el.name.charAt(0).toUpperCase() + el.name.slice(1)
-          }</span>
+          <span class='title-text text-clipped'>
+            ${el.name.charAt(0).toUpperCase() + el.name.slice(1)}
+          </span>
         </div>
         <div class='details'>
           <div class='detail'>
@@ -274,11 +274,15 @@ export class ExerciseUI {
           </div>
           <div class='detail'>
             <span class='detail-title'>Body part:</span>
-            <span class='detail-value text-clipped'>${el.bodyPart}</span>
+            <span class='detail-value text-clipped'>
+              ${el.bodyPart.charAt(0).toUpperCase() + el.bodyPart.slice(1)}
+              </span>
           </div>
           <div class='detail'>
             <span class='detail-title'>Target:</span>
-            <span class='detail-value text-clipped'>${el.target}</span>
+            <span class='detail-value text-clipped'>
+              ${el.target.charAt(0).toUpperCase() + el.target.slice(1)}
+            </span>
           </div>
         </div>
       </li>`;
@@ -293,7 +297,7 @@ export class ExerciseUI {
               <li class='exs-card-item' data-name='${name}'>
                   <img class='exs-card-img' src='${imgURL}' alt='${name}' />
                       <div class='exs-card-container'>
-                          <h3 class='exs-card-title'>${name}</h3>
+                          <h3 class='exs-card-title'>${name.charAt(0).toUpperCase() + name.slice(1)}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
                   </li>`
