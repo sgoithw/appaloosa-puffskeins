@@ -1,4 +1,5 @@
 import icons from '../img/icons.svg';
+
 /**
  * ...
  */
@@ -10,29 +11,29 @@ class PopupUI {
    * @param exercise
    */
   getExerciseDetailsHTML({
-    _id,
-    bodyPart,
-    equipment,
-    gifUrl,
-    name,
-    target,
-    description,
-    rating,
-    burnedCalories,
-    time,
-    popularity,
-    isFavorite,
-  }) {
+                           _id,
+                           bodyPart,
+                           equipment,
+                           gifUrl,
+                           name,
+                           target,
+                           description,
+                           rating,
+                           burnedCalories,
+                           time,
+                           popularity,
+                           isFavorite,
+                         }) {
     return `
   <div class='exercises-modal' data-id='${_id}'>
   <div class='exercises-container'">
     <div class='exercises-modal-left'>
       <img class='exercises-modal-image'
       ${
-        gifUrl
-          ? `src=${gifUrl}`
-          : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`
-      }
+      gifUrl
+        ? `src=${gifUrl}`
+        : `srcset = '../img/modal-exercise-image.jpg 1x,../img/modal-exercise-image@2x.jpg 2x' src = '../img/modal-exercise-image.jpg'`
+    }
       alt='exercise for body-part'  />
     </div>
 
@@ -46,7 +47,7 @@ class PopupUI {
       <h3 class='exercises-modal-title'>${name.charAt(0).toUpperCase() + name.slice(1)}</h3>
 
       <div class='exercises-modal-rating-container'>
-        <span class='exercises-modal-rating-value'>${rating}</span>
+        <span class='exercises-modal-rating-value'>${rating.toFixed(1)}</span>
         <fieldset class='exercises-modal-rating'>
           <input
             class='exercises-modal-rating-input'
@@ -57,8 +58,8 @@ class PopupUI {
           <label class='exercises-modal-rating-label' for='star1'>
             <svg
             class='exercises-modal-favorite-icon rating-star ${
-              rating >= 1 ? 'rated' : ''
-            }'
+      rating >= 1 ? 'rated' : ''
+    }'
             width='20'
             height='20'
           >
@@ -74,8 +75,8 @@ class PopupUI {
           <label class='exercises-modal-rating-label' for='star2'>
             <svg
             class='exercises-modal-favorite-icon rating-star ${
-              rating >= 2 ? 'rated' : ''
-            }'
+      rating >= 2 ? 'rated' : ''
+    }'
             width='20'
             height='20'
           >
@@ -91,8 +92,8 @@ class PopupUI {
           <label class='exercises-modal-rating-label' for='star3'>
             <svg
             class='exercises-modal-favorite-icon rating-star ${
-              rating >= 3 ? 'rated' : ''
-            }'
+      rating >= 3 ? 'rated' : ''
+    }'
             width='20'
             height='20'
           >
@@ -108,8 +109,8 @@ class PopupUI {
           <label class='exercises-modal-rating-label' for='star4'>
             <svg
             class='exercises-modal-favorite-icon rating-star ${
-              rating >= 4 ? 'rated' : ''
-            }'
+      rating >= 4 ? 'rated' : ''
+    }'
             width='20'
             height='20'
           >
@@ -125,8 +126,8 @@ class PopupUI {
           <label class='exercises-modal-rating-label' for='star5'>
             <svg
             class='exercises-modal-favorite-icon rating-star ${
-              rating >= 5 ? 'rated' : ''
-            }'
+      rating >= 5 ? 'rated' : ''
+    }'
             width='20'
             height='20'
           >
@@ -184,7 +185,7 @@ class PopupUI {
             <use href='${icons}#icon-heart'></use>
           </svg>
         </button>
-        <button class="exercises-modal-favorite-btn rating-btn">Give a rating</button>
+        <button class='exercises-modal-favorite-btn rating-btn'>Give a rating</button>
       </div>
   </div>
 `;
@@ -215,7 +216,7 @@ export class ExerciseUI {
   getExerciseListHTML(arr, cardType) {
     if (!ExerciseUI.exerciseCardType[cardType]) {
       console.error(
-        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`
+        `Unsupported exercise card type \'${cardType}\' when trying to create exercise card.`,
       );
       return '';
     }
@@ -236,7 +237,7 @@ export class ExerciseUI {
         if (cardType === ExerciseUI.exerciseCardType.HOME) {
           featureMarkup = `
         <div class='rating'>
-        <span class='rating-value'>${el.rating}</span>
+        <span class='rating-value'>${el.rating.toFixed(1)}</span>
         <svg class='rating-icon' width='18' height='18'>
         <use href='${icons}#icon-star'></use>
         </svg>
@@ -300,7 +301,7 @@ export class ExerciseUI {
                           <h3 class='exs-card-title'>${name}</h3>
                           <p class='exs-card-description'>${filter}</p>
                       </div>
-                  </li>`
+                  </li>`,
       )
       .join('');
   }
