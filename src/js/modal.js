@@ -62,6 +62,21 @@ function openModalExercises() {
   overlay.classList.remove('hidden');
   document.body.style.paddingRight = lockPaddingValue;
   document.body.style.overflow = 'hidden';
+
+  overlay.addEventListener('click', function (event) {
+    if (event.target === overlay) {
+      closeModalExercises();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (
+      event.key === 'Escape' &&
+      !modalExercises.classList.contains('hidden')
+    ) {
+      closeModalExercises();
+    }
+  });
 }
 
 function updateModal(markup, exerciseData) {
@@ -166,6 +181,18 @@ function closeModalExercises() {
   overlay.classList.add('hidden');
   document.body.style.paddingRight = '0px';
   document.body.style.overflow = 'auto';
+
+  const btnModalClose = document.querySelector('.modal-closed-btn');
+  btnModalClose.removeEventListener('click', closeModalExercises);
+
+  const btnModalFavorites = document.querySelector(
+    '.exercises-modal-favorite-btn'
+  );
+  btnModalFavorites.removeEventListener('click', toggleBtn);
+
+  overlay.removeEventListener('click', closeModalExercises);
+
+  document.removeEventListener('keydown', closeModalExercises);
 }
 
 overlay.addEventListener('click', function (event) {

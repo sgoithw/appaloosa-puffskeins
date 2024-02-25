@@ -23,9 +23,9 @@
   .exercise {
     width: calc((100% - 16px) / 2);
     padding: 16px;
-  
+
     font-size: var(--font-size-tiny);
-  
+
     border-radius: 15px;
     background-color: var(--color-white);
   }
@@ -57,7 +57,7 @@
   .exercise .main-action-btn {
     width: 61px;
     height: 24px;
-  
+
     font-size: var(--font-size-normal);
     line-height: 24px;
   }
@@ -72,7 +72,6 @@
 .exercise .top {
   display: flex;
   align-items: center;
-
 }
 
 .top {
@@ -82,7 +81,7 @@
 .exercise .badge {
   width: 76px;
   height: 26px;
-  
+
   display: inline-flex;
   padding: 5px 8px;
 
@@ -97,19 +96,18 @@
 
 .exercise .rating {
   margin-left: 16px;
-
   display: inline-flex;
   align-items: center;
+  gap: 2px;
 }
 
 .exercise .rating-value {
   line-height: 1.5;
   letter-spacing: 0;
+  padding-top: 1px;
 }
 
 .exercise .rating-icon {
-  padding: 2.5px 2px;
-  margin-left: 2px;
   fill: var(--color-yellow);
 }
 
@@ -182,7 +180,7 @@
 
     padding-top: 0px;
     padding-bottom: 0px;
-    
+
     font-size: 24px;
     line-height: 32px;
   }

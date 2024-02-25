@@ -1,7 +1,7 @@
 <div class="header" id="header-id">
     <div class="header-container container">
         <div>
-            <a class="header-logo" href="./index.html" aria-label="header-logo">
+            <a class="header-logo" href="index.html" aria-label="header-logo">
                 <svg class="header-logo-img" width="132" height="24">
                     <use href="/img/icons.svg#icon-logo"></use>
                 </svg>
@@ -52,7 +52,6 @@
 </div>
 <div class="header-menu js-menu-container" id="mobile-menu">
     <div class="mobile_menu">
-
         <button type="button" class="menu-closed-btn menu-toggle js-close-menu" aria-expanded="false"
             aria-controls="mobile-menu" aria-label="menu-button">
             <svg width="32" height="32">
@@ -61,14 +60,16 @@
         </button>
     </div>
     <div class="header-mob-wrap">
-        <ul class="header-mob-wrap-pages">
-            <li class="mob-wrap-item mob-wrap-item-active">
-                <a class="mob-wrap-pages" href="index.html">Home</a>
-            </li>
-            <li class="mob-wrap-item">
-                <a class="mob-wrap-pages" href="favorites.html">Favorites</a>
-            </li>
-        </ul>
+        <div id="header-mob-pages">
+            <ul class="header-mob-wrap-pages">
+                <li class="mob-wrap-item mob-wrap-item-active">
+                    <a class="mob-wrap-pages" href="/index.html">Home</a>
+                </li>
+                <li class="mob-wrap-item">
+                    <a class="mob-wrap-pages" href="favorites.html">Favorites</a>
+                </li>
+            </ul>
+        </div>
         <ul class="mob-wrap-social">
             <li class="header-mobile-wrap">
                 <a class="header-mob-link" href="https://www.facebook.com/goITclub/" target="_blank"
