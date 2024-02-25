@@ -523,3 +523,7 @@
 .exs-card-item-loader .exs-card-img{
   background: #ffffffb3;
 }
+
+.js-breadcrumbs-subtitle-link{
+  cursor: default;
+}

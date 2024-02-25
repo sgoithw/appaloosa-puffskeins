@@ -26,7 +26,7 @@ breadcrumbs.addEventListener('click', e => e.preventDefault());
 // Відрендерити сторінку з категоріями
 function returnBack(e) {
   e.preventDefault();
-  breadcrumbs.classList.add('hidden');
+  jsBreadcrumbsTitleLink.innerHTML = `<h2 class='title'>Exercises</h2>`;
   updateExerciseListAndPagination(currentFilter);
 }
 
@@ -58,7 +58,9 @@ let currentFilter = 'Muscles'; // фільтр за замовчуванням
 async function updateExerciseListAndPagination(filter, page = 1) {
   try {
     //Показуємо плейсхолдери
+    removeListeners();
     showCategoryPlaceholders();
+    breadcrumbs.classList.add('hidden');
     // Отримання даних вправ за вказаним фільтром та сторінкою
     const data = await api.filters({ filter, page, limit: 12 });
     const exercises = data.results;
@@ -90,15 +92,12 @@ function onExercisePageClick(event) {
         updateExerciseListAndPagination(currentFilter, nextPage);
 
         // Позначення активного елемента пагінації
-        activeItem.classList.remove('active');
-        event.target.parentElement.classList.add('active');
+        // activeItem.classList.remove('active');
+        // event.target.parentElement.classList.add('active');
       }
     }
   }
 }
-
-// Додаємо обробник подій для пагінації
-paginationContainer.addEventListener('click', onExercisePageClick);
 
 // Додаємо обробники подій для фільтрів
 const filterItems = document.querySelectorAll('.exercises-item');
@@ -112,10 +111,17 @@ filterItems.forEach(item => {
   });
 });
 
+// видаляемо слухач на момент загрузки
+function removeListeners() {
+  paginationContainer.removeEventListener('click', onExercisePageClick);
+}
+
 // накладаємо прослуховувачі подій до карток категорій
 function listenClick() {
   const items = document.querySelectorAll('.exs-card-item');
   items.forEach(item => item.addEventListener('click', handlerClickExercises));
+  // Додаємо обробник подій для пагінації
+  paginationContainer.addEventListener('click', onExercisePageClick);
 }
 
 // Функція виводу вправ в задежності від обраної користувачем категорії
@@ -123,6 +129,7 @@ function handlerClickExercises(e) {
   exerciseFilters.muscles = '';
   exerciseFilters.bodypart = '';
   exerciseFilters.equipment = '';
+  exerciseFilters.page = 1;
   exerciseFilters[filtersMap[currentFilter]] = e.currentTarget.dataset.name;
   showBreadcrumbs(e.currentTarget.dataset.name);
   displayExercises();
@@ -134,6 +141,7 @@ function handlerClickExercises(e) {
  */
 function showBreadcrumbs(val) {
 
+  jsBreadcrumbsTitleLink.innerHTML = `<h2 class='title'>Exercises /</h2>`;
   breadcrumbs.classList.remove('hidden');
   breadcrumbs.innerHTML = `<h3 class='subtitle'>${val.charAt(0).toUpperCase()}${val.slice(1)}</h3>`;
 
@@ -154,7 +162,6 @@ function renderExerciseList(exercises) {
 
   // Додавання HTML-представлення вправ до списку на сторінці
   exerciseListElement.innerHTML = exerciseListHTML;
-  paginationContainer.removeEventListener('click', onExercisePageClick);
   const paginationLinks = document.querySelectorAll('.exs-pagination-link');
   paginationLinks.forEach(link => link.addEventListener('click', onPageClick));
   searchForm.style.display = 'flex';
@@ -169,6 +176,7 @@ function onPageClick(e) {
 // Отримання вправ з API та відображення їх на сторінці
 function displayExercises() {
   //Показуєм контент плейсхолдери
+  removeListeners();
   showCardPlaceholders();
   // Отримання вправ з API
   api
@@ -248,7 +256,7 @@ function getCardPlaceholderHTML(count) {
   for (const i = count; count > 0; count--) {
     html += `<li class='exercise' >
           <button class='main-action-btn card__btn' type='button'>
-            <span class='content-placeholder' style='width:61px;'>&nbsp;</span>
+            Start
             <svg class='main-action-arrow-icon' width='16' height='16'>
               <use href='/img/icons.svg#icon-arrow-right'></use>
             </svg>
@@ -257,7 +265,7 @@ function getCardPlaceholderHTML(count) {
             <span class='badge'>Workout</span>
 
             <div class='rating'>
-              <span class='rating-value'><span class='content-placeholder' style='width:18px;'>&nbsp;</span></span>
+              <span class='rating-value'><span class='content-placeholder' style='width:10px;'>&nbsp;</span></span>
               <svg class='rating-icon' width='18' height='18'>
                 <use href='/img/icons.svg#icon-star'></use>
               </svg>
@@ -267,7 +275,7 @@ function getCardPlaceholderHTML(count) {
             <svg class='title-icon' width='14' height='16'>
               <use href='/img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
             </svg>
-            <span class='title-text text-clipped content-placeholder' style='width:100%;'>&nbsp;</span>
+            <span class='title-text text-clipped content-placeholder' style='width:100%; min-width: 150px'>&nbsp;</span>
           </div>
           <div class='details'>
             <div class='detail'>
