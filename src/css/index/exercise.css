@@ -79,7 +79,7 @@
 }
 
 .exercise .badge {
-  width: 76px;
+  width: fit-content;
   height: 26px;
 
   display: inline-flex;
