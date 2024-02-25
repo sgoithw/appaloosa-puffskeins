@@ -61,9 +61,8 @@ function handleSaveForm(e, id) {
 
   const email = formData.email.trim();
   const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-  console.log(formData);
+
   if (!emailPattern.test(email)) {
-    e.preventDefault();
     iziToast.error({
       position: 'center',
       timeout: 5000,
