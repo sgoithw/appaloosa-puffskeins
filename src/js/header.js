@@ -58,7 +58,7 @@ function buildMenu() {
   const currentPageUrl = window.location.pathname;
 
   const menuItems = [
-    { label: 'Home', href: 'index.html', activeOn: '/index.html' },
+    { label: 'Home', href: '/index.html', activeOn: '/' },
     { label: 'Favorites', href: 'favorites.html', activeOn: 'favorites.html' },
   ];
 
@@ -88,12 +88,52 @@ function buildMenu() {
     menu.appendChild(listItem);
   }
 
-  // document.querySelector('#header-pages').appendChild(menu);
-
   let element = document.querySelector('#header-pages');
   element.replaceChild(menu, element.querySelectorAll('ul')[0]);
   element = document.querySelector('#header-pages');
 }
 
-window.onload = buildMenu;
+function buildMobeleMenu() {
+  const currentPageUrl = window.location.pathname;
+
+  const menuItems = [
+    { label: 'Home', href: '/index.html', activeOn: '/' },
+    { label: 'Favorites', href: 'favorites.html', activeOn: 'favorites.html' },
+  ];
+
+  const menu = document.createElement('ul');
+  menu.classList.add('header-mob-wrap-pages');
+
+  for (const item of menuItems) {
+    const listItem = document.createElement('li');
+    listItem.classList.add('mob-wrap-item');
+
+    if (
+      currentPageUrl === item.activeOn ||
+      currentPageUrl === item.href ||
+      currentPageUrl.endsWith(item.activeOn)
+    ) {
+      listItem.classList.add('mob-wrap-item-active');
+      listItem.textContent = item.label;
+    } else {
+      const link = document.createElement('a');
+      link.classList.add('mob-wrap-pages');
+      link.href = item.href;
+      link.textContent = item.label;
+      listItem.appendChild(link);
+    }
+
+    menu.appendChild(listItem);
+  }
+
+  let element = document.querySelector('#header-mob-pages');
+  element.replaceChild(menu, element.querySelectorAll('ul')[0]);
+  element = document.querySelector('#header-mob-pages');
+}
+
+window.onload = function () {
+  buildMenu();
+  buildMobeleMenu();
+};
+
 setupMobileMenu();
