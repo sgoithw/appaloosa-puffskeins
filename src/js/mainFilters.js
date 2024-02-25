@@ -1,5 +1,7 @@
 import { api } from './api';
 import { exerciseUI, ExerciseUI } from './ui';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const exerciseFilters = {
   muscles: '',
@@ -24,6 +26,7 @@ const searchForm = document.querySelector('.search-form');
 searchInput.addEventListener('change', onSearchChange);
 searchForm.addEventListener('submit', onSearchSubmit);
 
+// Фільтрація вправ юзером через введення в інпут
 function onSearchChange(e) {
   exerciseFilters.keyword = e.target.value;
 }
@@ -34,7 +37,18 @@ function onSearchSubmit(e) {
   searchForm.reset();
 }
 
-let currentFilter = 'Muscles'; // Зберігаємо поточний фільтр
+// Функція для виводу помилки при завантаженні даних із сервера
+function showNoResultsMessage() {
+  iziToast.error({
+    title: 'Повідомлення:',
+    message: 'Помилка отримання вправ. Спробуйте ще.',
+    position: 'topCenter',
+    color: 'white',
+    timeout: 5000,
+  });
+}
+
+let currentFilter = 'Muscles'; // фільтр за замовчуванням
 
 // Функція для оновлення відображення списку вправ та пагінації
 async function updateExerciseListAndPagination(filter, page = 1) {
@@ -55,6 +69,7 @@ async function updateExerciseListAndPagination(filter, page = 1) {
     );
     listenClick();
   } catch (error) {
+    showNoResultsMessage();
     console.error('Error fetching exercises:', error);
   }
 }
@@ -95,11 +110,13 @@ filterItems.forEach(item => {
   });
 });
 
+// накладаємо прослуховувачі подій до карток категорій
 function listenClick() {
   const items = document.querySelectorAll('.exs-card-item');
   items.forEach(item => item.addEventListener('click', handlerClickExercises));
 }
 
+// Функція виводу вправ в задежності від обраної користувачем категорії
 function handlerClickExercises(e) {
   exerciseFilters.muscles = '';
   exerciseFilters.bodypart = '';
@@ -144,6 +161,17 @@ function displayExercises() {
   api
     .exercises(exerciseFilters)
     .then(exercises => {
+      if (exercises.results.length === 0) {
+        // Показуємо повідомлення про відсутність вправ
+        iziToast.show({
+          title: 'Повідомлення',
+          message: 'Такої вправи не існує. Спробуйте ще.',
+          position: 'topCenter',
+          timeout: 5000,
+          color: 'black',
+        });
+        return;
+      }
       // Відображення вправ на сторінці
       paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
         exercises.totalPages,
@@ -153,6 +181,7 @@ function displayExercises() {
       renderExerciseList(exercises);
     })
     .catch(error => {
+      showNoResultsMessage();
       console.error('Помилка отримання вправ:', error);
     });
 }
