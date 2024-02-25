@@ -101,8 +101,11 @@ class YourEnergyAPI {
     }).then(response => {
       if (response.ok) {
         return response.json();
+      } else {
+        return response.json().then(error => {
+          throw new Error(error.message);
+        });
       }
-      throw new Error('Error patching rating');
     });
   }
 
