@@ -58,7 +58,7 @@ function buildMenu() {
   const currentPageUrl = window.location.pathname;
 
   const menuItems = [
-    { label: 'Home', href: '/index.html', activeOn: '/' },
+    { label: 'Home', href: 'index.html', activeOn: '/' },
     { label: 'Favorites', href: 'favorites.html', activeOn: 'favorites.html' },
   ];
 
@@ -97,7 +97,7 @@ function buildMobeleMenu() {
   const currentPageUrl = window.location.pathname;
 
   const menuItems = [
-    { label: 'Home', href: '/index.html', activeOn: '/' },
+    { label: 'Home', href: 'index.html', activeOn: '/' },
     { label: 'Favorites', href: 'favorites.html', activeOn: 'favorites.html' },
   ];
 

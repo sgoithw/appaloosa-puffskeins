@@ -208,7 +208,7 @@
   border: 1px solid var(--color-grey-notselected);
 }
 .exs-pagination-link{
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -518,4 +518,8 @@
   .quote-container {
     gap: 32px;
   }
+}
+
+.exs-card-item-loader .exs-card-img{
+  background: #ffffffb3;
 }

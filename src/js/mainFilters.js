@@ -4,18 +4,11 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const exerciseFilters = {
-  muscles: '',
-  bodypart: '',
-  equipment: '',
-  keyword: '',
-  page: 1,
-  limit: 10,
+  muscles: '', bodypart: '', equipment: '', keyword: '', page: 1, limit: 10,
 };
 
 const filtersMap = {
-  Muscles: 'muscles',
-  'Body parts': 'bodypart',
-  Equipment: 'equipment',
+  Muscles: 'muscles', 'Body parts': 'bodypart', Equipment: 'equipment',
 };
 
 const exerciseContainer = document.querySelector('.exercises-cards-list');
@@ -64,20 +57,18 @@ let currentFilter = 'Muscles'; // фільтр за замовчуванням
 // Функція для оновлення відображення списку вправ та пагінації
 async function updateExerciseListAndPagination(filter, page = 1) {
   try {
+    //Показуємо плейсхолдери
+    showCategoryPlaceholders();
     // Отримання даних вправ за вказаним фільтром та сторінкою
     const data = await api.filters({ filter, page, limit: 12 });
     const exercises = data.results;
     searchForm.style.display = 'none';
     // Оновлення списку вправ
-    exerciseContainer.innerHTML =
-      exerciseUI.getExerciseCategoryListHTML(exercises);
+    exerciseContainer.innerHTML = exerciseUI.getExerciseCategoryListHTML(exercises);
 
     // Оновлення пагінації
     const totalPages = data.totalPages;
-    paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
-      totalPages,
-      page,
-    );
+    paginationContainer.innerHTML = exerciseUI.getPaginationHTML(totalPages, page);
     listenClick();
   } catch (error) {
     showNoResultsMessage();
@@ -115,7 +106,7 @@ filterItems.forEach(item => {
   item.addEventListener('click', function() {
     filterItems.forEach(item => item.classList.remove('active'));
     this.classList.add('active');
-    currentFilter = this.dataset.name; // Оновлюємо поточний фільтр
+    currentFilter = this.textContent; // Оновлюємо поточний фільтр
     // Скидання сторінки на першу при зміні фільтра
     updateExerciseListAndPagination(currentFilter);
   });
@@ -159,10 +150,7 @@ function renderExerciseList(exercises) {
   const cardType = ExerciseUI.exerciseCardType.HOME;
 
   // Отримання HTML-представлення списку вправ з класу ExerciseUI
-  const exerciseListHTML = exerciseUI.getExerciseListHTML(
-    exercises.results,
-    cardType,
-  );
+  const exerciseListHTML = exerciseUI.getExerciseListHTML(exercises.results, cardType);
 
   // Додавання HTML-представлення вправ до списку на сторінці
   exerciseListElement.innerHTML = exerciseListHTML;
@@ -180,6 +168,8 @@ function onPageClick(e) {
 
 // Отримання вправ з API та відображення їх на сторінці
 function displayExercises() {
+  //Показуєм контент плейсхолдери
+  showCardPlaceholders();
   // Отримання вправ з API
   api
     .exercises(exerciseFilters)
@@ -196,15 +186,106 @@ function displayExercises() {
         return;
       }
       // Відображення вправ на сторінці
-      paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
-        exercises.totalPages,
-        exerciseFilters.page,
-        exerciseFilters.limit,
-      );
+      paginationContainer.innerHTML = exerciseUI.getPaginationHTML(exercises.totalPages, exerciseFilters.page, exerciseFilters.limit);
       renderExerciseList(exercises);
     })
     .catch(error => {
       showNoResultsMessage();
       console.error('Помилка отримання вправ:', error);
     });
+}
+
+/**
+ * Show content placeholders
+ */
+function showCategoryPlaceholders() {
+
+  exerciseContainer.innerHTML = getCategoryPlaceholdersHTML(9);
+
+}
+
+/**
+ * Show content placeholders
+ */
+function showCardPlaceholders() {
+
+  exerciseContainer.innerHTML = getCardPlaceholderHTML(10);
+
+}
+
+/**
+ * Returns Category placeholder
+ * li html
+ * @param count
+ * @returns {string}
+ */
+function getCategoryPlaceholdersHTML(count) {
+  let html = '';
+
+  for (const i = count; count > 0; count--) {
+
+    html += `<li class='exs-card-item exs-card-item-loader' data-name='levator scapulae'>
+              <div class='exs-card-img'></div>
+              <div class='exs-card-container'>
+                <h3 class='exs-card-title'><span class='content-placeholder' style='width:80px;'>&nbsp;</span></h3>
+                <p class='exs-card-description'><span class='content-placeholder' style='width:60px;'>&nbsp;</span></p>
+              </div>
+            </li>`;
+
+  }
+
+  return html;
+}
+
+/**
+ * Returns cards placeholders
+ * @param count
+ */
+function getCardPlaceholderHTML(count) {
+
+  let html = '';
+
+  for (const i = count; count > 0; count--) {
+    html += `<li class='exercise' >
+          <button class='main-action-btn card__btn' type='button'>
+            <span class='content-placeholder' style='width:61px;'>&nbsp;</span>
+            <svg class='main-action-arrow-icon' width='16' height='16'>
+              <use href='/img/icons.svg#icon-arrow-right'></use>
+            </svg>
+          </button>
+          <div class='top'>
+            <span class='badge'>Workout</span>
+
+            <div class='rating'>
+              <span class='rating-value'><span class='content-placeholder' style='width:18px;'>&nbsp;</span></span>
+              <svg class='rating-icon' width='18' height='18'>
+                <use href='/img/icons.svg#icon-star'></use>
+              </svg>
+            </div>
+          </div>
+          <div class='title'>
+            <svg class='title-icon' width='14' height='16'>
+              <use href='/img/icons.svg#icon-running-stick-figure-svgrepo-com-1'></use>
+            </svg>
+            <span class='title-text text-clipped content-placeholder' style='width:100%;'>&nbsp;</span>
+          </div>
+          <div class='details'>
+            <div class='detail'>
+              <span class='detail-title'>Burned calories:</span>
+              <span class='detail-value text-clipped'><span class='content-placeholder' style='width:50px;'>&nbsp;</span></span>
+            </div>
+            <div class='detail'>
+              <span class='detail-title'>Body part:</span>
+              <span class='detail-value text-clipped'><span class='content-placeholder' style='width:50px;'>&nbsp;</span></span>
+            </div>
+            <div class='detail'>
+              <span class='detail-title'>Target:</span>
+              <span class='detail-value text-clipped'><span class='content-placeholder' style='width:50px;'>&nbsp;</span></span>
+            </div>
+          </div>
+        </li>`;
+
+  }
+
+  return html;
 }
