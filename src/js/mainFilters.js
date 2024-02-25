@@ -22,9 +22,20 @@ const exerciseContainer = document.querySelector('.exercises-cards-list');
 const paginationContainer = document.querySelector('.exs-pagination');
 const searchInput = document.querySelector('.filter-search');
 const searchForm = document.querySelector('.search-form');
+const jsBreadcrumbsTitleLink = document.querySelector('.js-breadcrumbs-title-link');
+const breadcrumbs = document.querySelector('#breadcrumbs');
 
 searchInput.addEventListener('change', onSearchChange);
 searchForm.addEventListener('submit', onSearchSubmit);
+jsBreadcrumbsTitleLink.addEventListener('click', returnBack);
+breadcrumbs.addEventListener('click', e => e.preventDefault());
+
+// Відрендерити сторінку з категоріями
+function returnBack(e) {
+  e.preventDefault();
+  breadcrumbs.classList.add('hidden');
+  updateExerciseListAndPagination(currentFilter);
+}
 
 // Фільтрація вправ юзером через введення в інпут
 function onSearchChange(e) {
@@ -65,7 +76,7 @@ async function updateExerciseListAndPagination(filter, page = 1) {
     const totalPages = data.totalPages;
     paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
       totalPages,
-      page
+      page,
     );
     listenClick();
   } catch (error) {
@@ -101,10 +112,10 @@ paginationContainer.addEventListener('click', onExercisePageClick);
 // Додаємо обробники подій для фільтрів
 const filterItems = document.querySelectorAll('.exercises-item');
 filterItems.forEach(item => {
-  item.addEventListener('click', function () {
+  item.addEventListener('click', function() {
     filterItems.forEach(item => item.classList.remove('active'));
     this.classList.add('active');
-    currentFilter = this.textContent; // Оновлюємо поточний фільтр
+    currentFilter = this.dataset.name; // Оновлюємо поточний фільтр
     // Скидання сторінки на першу при зміні фільтра
     updateExerciseListAndPagination(currentFilter);
   });
@@ -122,7 +133,19 @@ function handlerClickExercises(e) {
   exerciseFilters.bodypart = '';
   exerciseFilters.equipment = '';
   exerciseFilters[filtersMap[currentFilter]] = e.currentTarget.dataset.name;
+  showBreadcrumbs(e.currentTarget.dataset.name);
   displayExercises();
+}
+
+/**
+ * Show breadcrumbs
+ * @param val
+ */
+function showBreadcrumbs(val) {
+
+  breadcrumbs.classList.remove('hidden');
+  breadcrumbs.innerHTML = `<h3 class='subtitle'>${val.charAt(0).toUpperCase()}${val.slice(1)}</h3>`;
+
 }
 
 // Функція для відмальовування списку вправ у HTML
@@ -138,7 +161,7 @@ function renderExerciseList(exercises) {
   // Отримання HTML-представлення списку вправ з класу ExerciseUI
   const exerciseListHTML = exerciseUI.getExerciseListHTML(
     exercises.results,
-    cardType
+    cardType,
   );
 
   // Додавання HTML-представлення вправ до списку на сторінці
@@ -176,7 +199,7 @@ function displayExercises() {
       paginationContainer.innerHTML = exerciseUI.getPaginationHTML(
         exercises.totalPages,
         exerciseFilters.page,
-        exerciseFilters.limit
+        exerciseFilters.limit,
       );
       renderExerciseList(exercises);
     })
