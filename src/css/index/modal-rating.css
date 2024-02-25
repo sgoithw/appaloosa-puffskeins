@@ -96,8 +96,8 @@
   margin-bottom: 8px;
 }
 
-.rating-value {
-  color: var(--color-primary-100);
+.modal-rating-starts-container .rating-value {
+  color: var(--color-secondary-100);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
