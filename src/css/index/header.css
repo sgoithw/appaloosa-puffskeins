@@ -1,7 +1,9 @@
 .mobile_menu {
   margin-left: auto;
 }
-
+.mob-wrap-item {
+  color: var(--color-secondary-100);
+}
 .mob-wrap-item-active {
   padding: 6px 8px;
   border-radius: var(--radius-medium);
