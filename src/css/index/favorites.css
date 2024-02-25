@@ -1,15 +1,16 @@
 .favorites {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 @media screen and (min-width: 768px) {
   .favorites {
     padding-top: 100px;
-    padding-bottom: 187px;
+    padding-bottom: 100px;
   }
 }
 @media screen and (min-width: 1440px) {
   .favorites {
-    padding-bottom: 163px;
+    padding-bottom: 63px;
   }
 }
 .quote-block.favor {
