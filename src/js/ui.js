@@ -61,7 +61,6 @@ class PopupUI {
             }'
             width='20'
             height='20'
-            viewBox='0 0 32 32'
           >
             <use href='${icons}#icon-star'></use>
           </svg>
@@ -79,7 +78,6 @@ class PopupUI {
             }'
             width='20'
             height='20'
-            viewBox='0 0 32 32'
           >
             <use href='${icons}#icon-star'></use>
           </svg>
@@ -97,7 +95,6 @@ class PopupUI {
             }'
             width='20'
             height='20'
-            viewBox='0 0 32 32'
           >
             <use href='${icons}#icon-star'></use>
           </svg>
@@ -115,7 +112,6 @@ class PopupUI {
             }'
             width='20'
             height='20'
-            viewBox='0 0 32 32'
           >
             <use href='${icons}#icon-star'></use>
           </svg>
@@ -133,7 +129,6 @@ class PopupUI {
             }'
             width='20'
             height='20'
-            viewBox='0 0 32 32'
           >
             <use href='${icons}#icon-star'></use>
           </svg>
@@ -320,7 +315,6 @@ export class ExerciseUI {
     page = toNumber(page);
     perPage = toNumber(perPage);
     const paginationData = this.#makePaginationData(totalPages, page, perPage);
-
 
     if (totalPages > 5) {
       if (page > 1) {
