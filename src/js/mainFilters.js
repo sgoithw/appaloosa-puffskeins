@@ -23,7 +23,7 @@ searchInput.addEventListener('change', onSearchChange);
 searchForm.addEventListener('submit', onSearchSubmit);
 jsBreadcrumbsTitleLink.addEventListener('click', returnBack);
 breadcrumbs.addEventListener('click', e => e.preventDefault());
-filterClearIcon.addEventListener("click",()=>{searchForm.reset()})
+filterClearIcon.addEventListener('click', onFormClear);
 
 // Відрендерити сторінку з категоріями
 function returnBack(e) {
@@ -31,15 +31,20 @@ function returnBack(e) {
   updateExerciseListAndPagination(currentFilter);
 }
 
+function onFormClear() {
+  searchForm.reset();
+  exerciseFilters.keyword = '';
+  displayExercises();
+}
+
 // Фільтрація вправ юзером через введення в інпут
 function onSearchChange(e) {
-  exerciseFilters.keyword = e.target.value;
+  exerciseFilters.keyword = e.target.value.trim();
 }
 
 function onSearchSubmit(e) {
   e.preventDefault();
   displayExercises();
-  searchForm.reset();
 }
 
 // Функція для виводу помилки при завантаженні даних із сервера
