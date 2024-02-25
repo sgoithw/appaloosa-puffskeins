@@ -189,7 +189,7 @@ class PopupUI {
             <use href='${icons}#icon-heart'></use>
           </svg>
         </button>
-<!--        <button class="exercises-modal-rating-btn">Give a rating</button>-->
+        <button class="exercises-modal-favorite-btn rating-btn">Give a rating</button>
       </div>
   </div>
 `;

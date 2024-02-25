@@ -31,7 +31,7 @@ class YourEnergyAPI {
           return response.json(); // Parse response as JSON if successful
         }
         throw new Error('Error fetching filters'); // Throw error if request fails
-      },
+      }
     );
   }
 
@@ -55,7 +55,7 @@ class YourEnergyAPI {
           return response.json();
         }
         throw new Error('Error fetching exercises');
-      },
+      }
     );
   }
 
@@ -101,8 +101,11 @@ class YourEnergyAPI {
     }).then(response => {
       if (response.ok) {
         return response.json();
+      } else {
+        return response.json().then(error => {
+          throw new Error(error.message);
+        });
       }
-      throw new Error('Error patching rating');
     });
   }
 
@@ -132,7 +135,6 @@ class YourEnergyAPI {
       }
     });
   }
-
 }
 
 // Export an instance of YourEnergyAPI initialized with the base URL

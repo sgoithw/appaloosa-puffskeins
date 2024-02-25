@@ -2,6 +2,7 @@ import { api } from './api';
 import { favouritesManager } from './favouritesManager.js';
 import { popupUI } from './ui.js';
 import icons from '../img/icons.svg';
+import { handleRatingBtn } from './modal-rating.js';
 
 let isFavorite = false;
 let idFavorite;
@@ -37,14 +38,19 @@ async function onExercisesCardClick(event) {
     openModalExercises();
 
     const btnModalFavorites = document.querySelector(
-      '.exercises-modal-favorite-btn',
+      '.exercises-modal-favorite-btn'
     );
     btnModalFavorites.addEventListener('click', toggleBtn);
+
+    const ratingBtn = document.querySelector('.rating-btn');
+
+    ratingBtn.addEventListener('click', () => handleRatingBtn(exerciseID));
+
     const btnModalClose = document.querySelector('.modal-closed-btn');
     btnModalClose.addEventListener('click', closeModalExercises);
   } catch (error) {
     throw new Error(
-      'An error occurred during the download. Please try again later.',
+      'An error occurred during the download. Please try again later.'
     );
   }
 }
@@ -65,7 +71,7 @@ function updateModal(markup, exerciseData) {
 
 function toggleFavorites(exerciseData) {
   const btnModalFavorites = document.querySelector(
-    '.exercises-modal-favorite-btn',
+    '.exercises-modal-favorite-btn'
   );
 
   isFavorite = favouritesManager.isFavorite(exerciseData._id);
@@ -80,7 +86,7 @@ function toggleFavorites(exerciseData) {
 function toggleBtn() {
   isFavorite = !favouritesManager.isFavorite(currentExercise._id);
   const btnModalFavorites = document.querySelector(
-    '.exercises-modal-favorite-btn',
+    '.exercises-modal-favorite-btn'
   );
 
   const localFavorite = document.querySelector('.fav-list');
@@ -107,7 +113,9 @@ function toggleBtn() {
 }
 
 function showExerciseCard(id) {
-  const card = [...document.querySelectorAll(`.fav-list .exercise`)].filter(e => e.dataset.exerciseId == id);
+  const card = [...document.querySelectorAll(`.fav-list .exercise`)].filter(
+    e => e.dataset.exerciseId == id
+  );
   if (!card || card.length === 0) {
     return;
   }
@@ -116,7 +124,9 @@ function showExerciseCard(id) {
 }
 
 function hideExerciseCard(id) {
-  const card = [...document.querySelectorAll(`.fav-list .exercise`)].filter(e => e.dataset.exerciseId == id);
+  const card = [...document.querySelectorAll(`.fav-list .exercise`)].filter(
+    e => e.dataset.exerciseId == id
+  );
 
   if (!card || card.length === 0) {
     return;
@@ -158,13 +168,13 @@ function closeModalExercises() {
   document.body.style.overflow = 'auto';
 }
 
-overlay.addEventListener('click', function(event) {
+overlay.addEventListener('click', function (event) {
   if (event.target === overlay) {
     closeModalExercises();
   }
 });
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
     closeModalExercises();
   }

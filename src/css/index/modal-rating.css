@@ -33,7 +33,7 @@
   padding: 0;
   border: none;
   display: flex;
-  gap: 2px;
+  gap: 4px;
 }
 
 .rating-close-btn {
@@ -80,9 +80,9 @@
 .rating-label {
   display: flex;
   cursor: pointer;
-  margin: 2px;
-  width: 24px;
-  height: 24px;
+
+  width: 18px;
+  height: 18px;
 }
 
 .rating-title {
@@ -97,15 +97,25 @@
 }
 
 .rating-value {
-  color: var(--color-primary-100);
-  font-size: 12px;
+  color: var(--color-secondary-100);
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  height: 19px;
-  margin: 5px;
 }
+.modal-rating-starts-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+.modal-rating-legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
 
+  color: var(--color-secondary-40);
+}
 .rating-form {
   display: flex;
   justify-content: center;
